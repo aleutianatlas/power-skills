@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Your Power Skills Report</title>
+<style>
+:root{--bg:#f8fafc;--card:#fff;--text:#0f172a;--muted:#475569;--accent:#186C74}
+*{box-sizing:border-box}
+body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Roboto,Segoe UI,Helvetica,Arial;background:var(--bg);color:var(--text)}
+.wrapper{max-width:900px;margin:32px auto;padding:0 16px}
+.card{background:var(--card);border-radius:16px;padding:24px;box-shadow:0 8px 30px rgba(2,8,23,.06)}
+h1,h2{margin:0 0 8px} .muted{color:var(--muted)}
+table{width:100%;border-collapse:collapse;margin:12px 0 20px}
+th,td{border:1px solid #e2e8f0;padding:8px;text-align:left;font-size:14px}
+th{background:#f1f5f9}
+.section{margin-top:16px}
+.badge{display:inline-block;background:#e6f3f4;color:#0b3f44;border:1px solid #c7e3e6;border-radius:999px;padding:4px 8px;font-size:12px}
+.actions{display:flex;gap:8px;margin-top:12px}
+button,a.btn{background:var(--accent);color:#fff;border:0;border-radius:12px;padding:10px 14px;font-weight:600;text-decoration:none;display:inline-block}
+@media print {
+  .actions, .back { display:none }
+  body{background:#fff}
+  .card{box-shadow:none}
+}
+.back{margin:12px 0;display:inline-block}
+</style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="card">
+      <a class="back" href="index.html">← Start over</a>
+      <h1>Your Power Skills Report</h1>
+      <p class="muted" id="who"></p>
+
+      <div class="section">
+        <h2>Overall Summary</h2>
+        <p class="muted">Averages are calculated from the ratings you submitted on each step (1–10 scale).</p>
+        <div id="summary"></div>
+      </div>
+
+      <div class="section">
+        <h2>Detailed Responses</h2>
+        <div id="details"></div>
+      </div>
+
+      <div class="actions">
+        <button onclick="window.print()">Download PDF</button>
+        <a class="btn" href="thanks.html">Finish</a>
+      </div>
+    </div>
+  </div>
+
+<script>
+(function(){
+  const KEY = "aa_formspree_train";
+  let state = {};
+  try { state = JSON.parse(localStorage.getItem(KEY)) || {}; } catch(e){ state = {}; }
+
+  // Identity
+  const who = document.getElementById("who");
+  const name = state.name || "(no name)";
+  const email = state.email || "";
+  const ts = state.lastSubmittedAt ? new Date(state.lastSubmittedAt).toLocaleString() : "";
+  who.textContent = `Name: ${name}${email ? " · " + email : ""}${ts ? " · Completed: " + ts : ""}`;
+
+  // Helpers
+  function isScore(v){ return v && !isNaN(Number(v)) && Number(v) >= 1 && Number(v) <= 10; }
+  function titleCase(s){ return (s||"").replace(/[_\-]+/g," ").replace(/\b\w/g, m=>m.toUpperCase()); }
+
+  const details = document.getElementById("details");
+  const summary = document.getElementById("summary");
+
+  const steps = Object.keys(state.responses || {}).sort(); // step_1, step_2, step_3
+  if (!steps.length) {
+    details.innerHTML = "<p class='muted'>No responses found in this browser.</p>";
+    summary.innerHTML = "<p class='muted'>Complete the inventory to see your report.</p>";
+    return;
+  }
+
+  // Compute per-step averages and overall average
+  let overallTotal = 0, overallCount = 0;
+  const stepAverages = [];
+
+  steps.forEach(sk => {
+    const rows = state.responses[sk] || {};
+    const entries = Object.entries(rows).filter(([k,v]) => isScore(v));
+    let sum = 0;
+    entries.forEach(([,v]) => { sum += Number(v); });
+    const avg = entries.length ? (sum / entries.length) : 0;
+    stepAverages.push({ step: sk, avg, count: entries.length });
+    overallTotal += sum; overallCount += entries.length;
+
+    // render table per step
+    const tbl = document.createElement("table");
+    tbl.innerHTML = `
+      <thead><tr><th>Skill</th><th>Score</th></tr></thead>
+      <tbody>
+        ${entries.map(([k,v])=>{
+          // nicer label: drop "stepN__"
+          const label = k.replace(/^step\d*__/, "").replace(/^.*?__/, "");
+          return `<tr><td>${titleCase(label)}</td><td>${v}</td></tr>`;
+        }).join("")}
+      </tbody>
+    `;
+    const h = document.createElement("h3");
+    h.textContent = sk.replace("step_","Step ");
+    const badge = document.createElement("span");
+    badge.className = "badge";
+    badge.textContent = `Average: ${avg ? avg.toFixed(2) : "—"} (${entries.length} items)`;
+    details.appendChild(h);
+    details.appendChild(badge);
+    details.appendChild(tbl);
+  });
+
+  const overallAvg = overallCount ? (overallTotal / overallCount) : 0;
+  summary.innerHTML = `
+    <p><strong>Overall Average:</strong> ${overallAvg ? overallAvg.toFixed(2) : "—"} (${overallCount} total ratings)</p>
+    <ul>
+      ${stepAverages.map(s => `<li><strong>${s.step.replace("step_","Step ")}:</strong> ${s.avg ? s.avg.toFixed(2) : "—"} (${s.count})</li>`).join("")}
+    </ul>
+    <p class="muted">Tip: Use the “Download PDF” button to save or share.</p>
+  `;
+})();
+</script>
+</body>
+</html>
