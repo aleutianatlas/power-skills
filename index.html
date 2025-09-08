@@ -1,10 +1,9 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Aleutian Atlas — Power Skills Inventory</title>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <style>
 :root{
   --bg:#f8fafc; --card:#fff; --text:#0f172a; --muted:#475569;
@@ -12,41 +11,48 @@
 }
 *{box-sizing:border-box}
 body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Roboto,Segoe UI,Helvetica,Arial;background:var(--bg);color:var(--text)}
-.wrapper{max-width:760px;margin:48px auto;padding:0 16px}
+.wrapper{max-width:960px;margin:48px auto;padding:0 16px}
 .card{background:var(--card);border-radius:16px;padding:24px;box-shadow:0 8px 30px rgba(2,8,23,.06)}
-h1{margin:0 0 8px} .lead{color:var(--muted)}
-.label{display:block;font-size:13px;color:var(--muted);margin:12px 0 6px}
-input,textarea{width:100%;padding:10px;border:1px solid #e2e8f0;border-radius:10px;font:inherit}
-.hr{height:1px;background:#e2e8f0;margin:16px 0}
-button{background:var(--accent);color:#fff;border:0;border-radius:12px;padding:12px 16px;font-weight:600;cursor:pointer}
-.small{font-size:12px;color:var(--muted)}
+h1{margin:0 0 8px}
+.lead{color:var(--muted);margin-bottom:24px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+a.assessment{
+  display:block;text-decoration:none;background:var(--accent);color:#fff;
+  padding:16px;border-radius:12px;font-weight:600;text-align:center;
+  transition:transform .15s ease, background .2s ease;
+}
+a.assessment:hover{background:#0f4f54;transform:translateY(-2px)}
 </style>
 </head>
 <body>
 <div class="wrapper">
   <div class="card">
     <h1>Power Skills Inventory</h1>
-    <p class="lead">Start with your info. On submit you’ll move to Step 1 automatically.</p>
+    <p class="lead">Choose a category below to begin your self-assessment.</p>
 
-    <!-- Replace with your Formspree endpoint -->
-    <form action="https://formspree.io/f/xdklyqpe" method="POST" data-step="profile" data-next="strategic-leadership.html">
-      <label class="label" for="name">Full name</label>
-      <input id="name" name="name" type="text" required />
-
-      <label class="label" for="email">Email</label>
-      <input id="email" name="email" type="email" required />
-
-      <!-- Non-JS fallback redirect -->
-      <input type="hidden" name="_redirect" value="strategic-leadership.html" />
-      <!-- Spam honeypot -->
-      <label style="display:none;">Leave this empty: <input name="_gotcha" /></label>
-
-      <div class="hr"></div>
-      <button type="submit">Start</button>
-      <p class="small">We’ll remember your session in this browser only.</p>
-    </form>
+    <div class="grid">
+      <a class="assessment" href="adaptability.html">Adaptability</a>
+      <a class="assessment" href="business-thinking.html">Business Thinking</a>
+      <a class="assessment" href="collaboration.html">Collaboration</a>
+      <a class="assessment" href="communication.html">Communication</a>
+      <a class="assessment" href="decision-making.html">Decision Making</a>
+      <a class="assessment" href="dependability.html">Dependability</a>
+      <a class="assessment" href="expertise.html">Expertise</a>
+      <a class="assessment" href="influence.html">Influence</a>
+      <a class="assessment" href="initiative.html">Initiative</a>
+      <a class="assessment" href="innovation.html">Innovation</a>
+      <a class="assessment" href="leadership.html">Leadership</a>
+      <a class="assessment" href="planning.html">Planning</a>
+      <a class="assessment" href="relationship-building.html">Relationship Building</a>
+      <a class="assessment" href="resilience.html">Resilience</a>
+      <a class="assessment" href="results-orientation.html">Results Orientation</a>
+      <a class="assessment" href="strategy.html">Strategy</a>
+      <a class="assessment" href="values.html">Values</a>
+      <a class="assessment" href="writing.html">Writing</a>
+      <a class="assessment" href="critical-thinking.html">Critical Thinking</a>
+      <a class="assessment" href="learning.html">Learning</a>
+    </div>
   </div>
 </div>
-<script src="app.js"></script>
 </body>
 </html>
