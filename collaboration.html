@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Power Skills — Step 2</title>
+<style>
+:root{--bg:#f8fafc;--card:#fff;--text:#0f172a;--muted:#475569;--accent:#186C74}
+*{box-sizing:border-box}body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Roboto,Segoe UI,Helvetica,Arial;background:var(--bg);color:var(--text)}
+.wrapper{max-width:760px;margin:48px auto;padding:0 16px}.card{background:var(--card);border-radius:16px;padding:24px;box-shadow:0 8px 30px rgba(2,8,23,.06)}
+h1{margin:0 0 8px}.lead{color:var(--muted)}
+fieldset{border:0;padding:0;margin:0 0 16px}legend{font-weight:600;margin-bottom:8px}
+.skill{margin-bottom:12px}.label{font-size:13px;color:var(--muted);display:block;margin-bottom:6px}
+.radios{display:grid;grid-template-columns:repeat(10,minmax(32px,1fr));gap:8px}
+.radios label{display:grid;place-items:center;border:1px solid #e2e8f0;padding:10px 0;border-radius:8px;cursor:pointer}
+.radios input{display:none}.radios input:checked+span{outline:2px solid var(--accent);outline-offset:-2px;border-radius:8px}
+.labels{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-top:6px}
+textarea,input{width:100%;padding:10px;border:1px solid #e2e8f0;border-radius:10px;font:inherit}
+.hr{height:1px;background:#e2e8f0;margin:16px 0}
+button{background:var(--accent);color:#fff;border:0;border-radius:12px;padding:12px 16px;font-weight:600;cursor:pointer}
+.small{font-size:12px;color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="wrapper">
+  <div class="card">
+    <h1>Step 2 — Collaboration</h1>
+    <p class="lead">Rate each from 1 to 10.</p>
+
+    <!-- Replace with your Formspree endpoint -->
+    <form action="https://formspree.io/f/YOUR_STEP2_ID" method="POST" data-step="2" data-next="step3.html">
+      <fieldset>
+        <legend>Collaboration</legend>
+
+        <div class="skill"><span class="label">Active Listening</span>
+          <div class="radios">
+            <label><input type="radio" name="step2__active_listening" value="1" required><span>1</span></label>
+            <label><input type="radio" name="step2__active_listening" value="2"><span>2</span></label>
+            <label><input type="radio" name="step2__active_listening" value="3"><span>3</span></label>
+            <label><input type="radio" name="step2__active_listening" value="4"><span>4</span></label>
+            <label><input type="radio" name="step2__active_listening" value="5"><span>5</span></label>
+            <label><input type="radio" name="step2__active_listening" value="6"><span>6</span></label>
+            <label><input type="radio" name="step2__active_listening" value="7"><span>7</span></label>
+            <label><input type="radio" name="step2__active_listening" value="8"><span>8</span></label>
+            <label><input type="radio" name="step2__active_listening" value="9"><span>9</span></label>
+            <label><input type="radio" name="step2__active_listening" value="10"><span>10</span></label>
+          </div><div class="labels"><span>Low</span><span>High</span></div>
+        </div>
+
+        <div class="skill"><span class="label">Empathy</span>
+          <div class="radios">
+            <label><input type="radio" name="step2__empathy" value="1" required><span>1</span></label>
+            <label><input type="radio" name="step2__empathy" value="2"><span>2</span></label>
+            <label><input type="radio" name="step2__empathy" value="3"><span>3</span></label>
+            <label><input type="radio" name="step2__empathy" value="4"><span>4</span></label>
+            <label><input type="radio" name="step2__empathy" value="5"><span>5</span></label>
+            <label><input type="radio" name="step2__empathy" value="6"><span>6</span></label>
+            <label><input type="radio" name="step2__empathy" value="7"><span>7</span></label>
+            <label><input type="radio" name="step2__empathy" value="8"><span>8</span></label>
+            <label><input type="radio" name="step2__empathy" value="9"><span>9</span></label>
+            <label><input type="radio" name="step2__empathy" value="10"><span>10</span></label>
+          </div><div class="labels"><span>Low</span><span>High</span></div>
+        </div>
+
+        <div class="skill"><span class="label">Consensus Building</span>
+          <div class="radios">
+            <label><input type="radio" name="step2__consensus_building" value="1" required><span>1</span></label>
+            <label><input type="radio" name="step2__consensus_building" value="2"><span>2</span></label>
+            <label><input type="radio" name="step2__consensus_building" value="3"><span>3</span></label>
+            <label><input type="radio" name="step2__consensus_building" value="4"><span>4</span></label>
+            <label><input type="radio" name="step2__consensus_building" value="5"><span>5</span></label>
+            <label><input type="radio" name="step2__consensus_building" value="6"><span>6</span></label>
+            <label><input type="radio" name="step2__consensus_building" value="7"><span>7</span></label>
+            <label><input type="radio" name="step2__consensus_building" value="8"><span>8</span></label>
+            <label><input type="radio" name="step2__consensus_building" value="9"><span>9</span></label>
+            <label><input type="radio" name="step2__consensus_building" value="10"><span>10</span></label>
+          </div><div class="labels"><span>Low</span><span>High</span></div>
+        </div>
+
+        <div class="skill"><span class="label">Conflict Resolution</span>
+          <div class="radios">
+            <label><input type="radio" name="step2__conflict_resolution" value="1" required><span>1</span></label>
+            <label><input type="radio" name="step2__conflict_resolution" value="2"><span>2</span></label>
+            <label><input type="radio" name="step2__conflict_resolution" value="3"><span>3</span></label>
+            <label><input type="radio" name="step2__conflict_resolution" value="4"><span>4</span></label>
+            <label><input type="radio" name="step2__conflict_resolution" value="5"><span>5</span></label>
+            <label><input type="radio" name="step2__conflict_resolution" value="6"><span>6</span></label>
+            <label><input type="radio" name="step2__conflict_resolution" value="7"><span>7</span></label>
+            <label><input type="radio" name="step2__conflict_resolution" value="8"><span>8</span></label>
+            <label><input type="radio" name="step2__conflict_resolution" value="9"><span>9</span></label>
+            <label><input type="radio" name="step2__conflict_resolution" value="10"><span>10</span></label>
+          </div><div class="labels"><span>Low</span><span>High</span></div>
+        </div>
+
+        <div class="skill"><span class="label">Cross-Functional Teaming</span>
+          <div class="radios">
+            <label><input type="radio" name="step2__cross_functional_teaming" value="1" required><span>1</span></label>
+            <label><input type="radio" name="step2__cross_functional_teaming" value="2"><span>2</span></label>
+            <label><input type="radio" name="step2__cross_functional_teaming" value="3"><span>3</span></label>
+            <label><input type="radio" name="step2__cross_functional_teaming" value="4"><span>4</span></label>
+            <label><input type="radio" name="step2__cross_functional_teaming" value="5"><span>5</span></label>
+            <label><input type="radio" name="step2__cross_functional_teaming" value="6"><span>6</span></label>
+            <label><input type="radio" name="step2__cross_functional_teaming" value="7"><span>7</span></label>
+            <label><input type="radio" name="step2__cross_functional_teaming" value="8"><span>8</span></label>
+            <label><input type="radio" name="step2__cross_functional_teaming" value="9"><span>9</span></label>
+            <label><input type="radio" name="step2__cross_functional_teaming" value="10"><span>10</span></label>
+          </div><div class="labels"><span>Low</span><span>High</span></div>
+        </div>
+      </fieldset>
+
+      <label class="label" for="step2_notes">Notes (optional)</label>
+      <textarea id="step2_notes" name="step2_notes" rows="4"></textarea>
+
+      <input type="hidden" name="_redirect" value="step3.html" />
+      <label style="display:none;">Leave this empty:<input name="_gotcha"></label>
+      <div class="hr"></div>
+      <button type="submit">Submit Step 2 & Continue</button>
+    </form>
+  </div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
