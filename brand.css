@@ -78,12 +78,17 @@ h1, h2, h3, .skill-title, .aa-title{
   margin:8px auto 2px;
   max-width:900px;
 }
-.aa-sub{
-  text-align:center;
-  color:#e6f3f4;
-  margin:0 auto;
-  max-width:900px;
+/* Reset default: body copy is left-aligned */
+.aa-sub { text-align: left; }
+
+/* Only center the subline inside the hero */
+.aa-hero .aa-sub {
+  text-align: center;
+  color: #e6f3f4;
+  margin: 0 auto;
+  max-width: 900px;
 }
+
 
 /* hero card (if you use it) */
 .aa-hero-card{
