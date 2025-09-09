@@ -35,56 +35,48 @@ h1, h2, h3, .skill-title, .aa-title{
     linear-gradient(180deg, #0f4f54, #0f4f54);
 }
 
-/* one centered column inside the hero */
 .aa-hero-inner{
   max-width:1100px;
   margin:0 auto;
   padding:36px 20px 88px;
   display:flex;
   flex-direction:column;
-  align-items:stretch;   /* brand row stays left; taglines can center */
-  gap:12px;
-}
-@media (max-width: 900px){
-  .aa-hero-inner{ padding-bottom:64px; }
+  gap:14px;
 }
 
-/* --- BRAND ROW: logo + wordmark (LEFT) --- */
+/* --- BRAND ROW: stays LEFT --- */
 .aa-brand{
   display:flex;
   align-items:center;
   gap:12px;
-  justify-content:flex-start;  /* lock left */
-  margin-bottom:4px;
+  justify-content:flex-start;  /* ensure left */
 }
 
-/* Logo image, no box */
 .aa-logo{
   max-height:60px;
   width:auto;
   display:block;
 }
 
-/* Wordmark: ALEUTIAN (bold) + ATLAS (thin), uppercase */
 .aa-title{
   display:flex;
   gap:6px;
   line-height:1;
   letter-spacing:1px;
   font-family:"Aptos","Segoe UI","Helvetica Neue",Arial,sans-serif;
-  font-size:2rem;                 /* adjust to taste */
+  font-size:2rem;
   text-transform:uppercase;
 }
-.aa-aleutian{ font-weight:700; }  /* bold */
-.aa-atlas{    font-weight:300; }  /* thin/light */
+.aa-aleutian{ font-weight:700; }
+.aa-atlas{ font-weight:300; }
 
-/* --- TAGLINES (CENTERED) --- */
+/* --- TAGLINES: centered across page --- */
 .aa-claim{
   text-align:center;
   font-size:1.75rem;
   font-weight:800;
   margin:8px auto 2px;
-  max-width:900px;                /* keeps lines readable */
+  max-width:900px;
 }
 .aa-sub{
   text-align:center;
