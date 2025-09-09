@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Connection — Aleutian Atlas Power Skills</title>
+  <link rel="stylesheet" href="brand.css">
+</head>
+<body>
+
+<!-- Brand Header -->
+<header class="aa-hero">
+  <div class="aa-hero-inner">
+    <div>
+      <div class="aa-brand">
+        <div class="aa-logo"><img src="assets/logo.png" alt="Aleutian Atlas Logo"></div>
+        <div class="aa-title">Aleutian Atlas</div>
+      </div>
+      <div class="aa-claim">Navigate your career with confidence</div>
+      <p class="aa-sub">Connection Inventory — reflect on how you build relationships and foster trust.</p>
+    </div>
+    <div class="aa-hero-card">
+      <strong>Instructions</strong>
+      <p class="aa-sub" style="color:#355b60;margin:6px 0 0;">
+        Read the description for each skill. Choose the proficiency level (0–10) that most closely reflects you today.
+      </p>
+    </div>
+  </div>
+</header>
+
+<div class="wrapper">
+  <div class="card">
+
+    <!-- Replace with your Formspree endpoint -->
+    <form action="https://formspree.io/f/YOUR_CONNECTION_FORM_ID"
+          method="POST"
+          data-step="connection"
+          data-next="thanks.html">
+
+      <!-- Identity -->
+      <label class="label" for="name">Full name</label>
+      <input id="name" name="name" type="text" required>
+
+      <label class="label" for="email">Email</label>
+      <input id="email" name="email" type="email" required>
+
+      <div class="hr"></div>
+
+      <!-- Skill: Appreciation -->
+      <fieldset class="scale">
+        <legend class="label"><strong>Appreciation</strong></legend>
+        <p class="aa-sub">Calls out good work and says thank you. Makes sure people get credit and feel valued for what they do.</p>
+        <select name="connection__appreciation" required>
+          <option value="">Select your level (0–10)</option>
+          <option value="0">0 – I don’t often think to express appreciation at work.</option>
+          <option value="1">1 – I say thank you occasionally but not consistently.</option>
+          <option value="2">2 – I recognize contributions when prompted, like during formal reviews.</option>
+          <option value="3">3 – I make an effort to thank people in small ways, though sometimes I forget.</option>
+          <option value="4">4 – I notice good work and share appreciation when it stands out.</option>
+          <option value="5">5 – I regularly say thank you and make sure people feel noticed.</option>
+          <option value="6">6 – I personalize my appreciation, recognizing people in ways meaningful to them.</option>
+          <option value="7">7 – I highlight contributions publicly so people get visible credit.</option>
+          <option value="8">8 – I create team habits of appreciation, like shout-outs in meetings.</option>
+          <option value="9">9 – I build a culture where recognition flows naturally among teammates.</option>
+          <option value="10">10 – I’m known for making people feel valued and inspiring others to spread appreciation.</option>
+        </select>
+      </fieldset>
+
+      <!-- Repeat pattern for each skill -->
+      <!-- Compassion -->
+      <fieldset class="scale">
+        <legend class="label"><strong>Compassion</strong></legend>
+        <p class="aa-sub">Pays attention to how people are doing and responds with care. Checks in when someone seems off and shows up with kindness, not criticism.</p>
+        <select name="connection__compassion" required>
+          <option value="">Select your level (0–10)</option>
+          <option value="0">0 – I don’t usually think about how people are feeling at work.</option>
+          <option value="1">1 – I notice when someone is clearly upset but don’t know what to do.</option>
+          <option value="2">2 – I feel concerned for others but may hesitate to reach out.</option>
+          <option value="3">3 – I’ve started checking in, even if it’s just saying, “You seem quiet today.”</option>
+          <option value="4">4 – I offer support when I sense someone needs it, like giving them space or encouragement.</option>
+          <option value="5">5 – I regularly show care by asking how people are doing and offering help.</option>
+          <option value="6">6 – I balance care with accountability, showing kindness while keeping work moving.</option>
+          <option value="7">7 – I anticipate when people might need extra support and adjust my approach.</option>
+          <option value="8">8 – I encourage compassion across the team, modeling it in daily interactions.</option>
+          <option value="9">9 – I build a culture where people support one another in both personal and professional challenges.</option>
+          <option value="10">10 – I’m known as someone who leads with compassion and helps others bring kindness into their work.</option>
+        </select>
+      </fieldset>
+
+      <!-- Empathy, Listening, Openness, Respectfulness, Inclusion -->
+      <!-- (copy/paste structure with their respective text blocks you’ve written) -->
+
+      <div class="hr"></div>
+      <button class="btn" type="submit" name="_action" value="report">Submit & Generate Report</button>
+      <button class="btn ghost" type="submit" name="_action" value="menu">Return to Skills Menu</button>
+
+      <p class="aa-foot">© Aleutian Atlas</p>
+    </form>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
