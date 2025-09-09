@@ -95,4 +95,46 @@ h1, h2, h3, .skill-title, .aa-title{
   box-shadow: var(--aa-shadow);
 }
 
+/* ===== WRAPPER + CARDS (restore) ===== */
+
+/* Page container that centers content and sets the page width */
+.wrapper{
+  max-width: 980px;
+  margin: -52px auto 56px;   /* pulls cards up toward the hero */
+  padding: 0 20px;           /* side padding on small screens */
+}
+
+/* Generic card surface */
+.card{
+  background: var(--aa-surface);
+  border: 1px solid var(--aa-border);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: var(--aa-shadow);
+}
+
+/* Info card that sits under the hero */
+.info-card{
+  margin-top: -44px;   /* overlap toward the hero edge */
+  margin-bottom: 16px;
+}
+
+/* Horizontal rule between sections */
+.hr{height:1px; background:var(--aa-border); margin:20px 0}
+
+/* Small footer text under forms */
+.aa-foot{ text-align:center; color:var(--aa-muted); font-size:12px; margin:18px 0 0 }
+
+/* Skill card (inside the form) */
+.skill-card{
+  border:1px solid var(--aa-border);
+  border-radius:14px;
+  padding:16px;
+  margin-bottom:14px;
+  background:#fff;
+}
+.skill-head{display:flex; align-items:flex-start; justify-content:space-between; gap:12px}
+.skill-title{font-weight:800; font-size:16px; margin:0 0 4px}
+.skill-desc{color:var(--aa-muted); margin:0 0 10px; font-size:14px}
+.skill-body{display:grid; gap:10px}
 
