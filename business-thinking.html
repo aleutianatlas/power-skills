@@ -62,12 +62,28 @@
           </div>
         </div>
         <div class="skill-body">
-          <label class="label">Select your level (0–10)</label>
-          <select name="connection__appreciation" required data-levelpicker>
-            <option value="" selected>— Choose —</option>
-            <option>0</option><option>1</option><option>2</option><option>3</option><option>4</option>
-            <option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option>
-          </select>
+          <span class="label">Select your level (0–10)</span>
+<!-- 0–10 radio pills -->
+  <div class="pillscale" role="group" aria-label="Appreciation level"
+       data-skill="appreciation" data-levelpicker>
+    <!-- name must be unique per skill -->
+    <div class="pill">
+      <input id="appreciation-0" type="radio" name="connection__appreciation" value="0" required>
+      <label for="appreciation-0">0</label>
+    </div>
+    <div class="pill"><input id="appreciation-1" type="radio" name="connection__appreciation" value="1"><label for="appreciation-1">1</label></div>
+    <div class="pill"><input id="appreciation-2" type="radio" name="connection__appreciation" value="2"><label for="appreciation-2">2</label></div>
+    <div class="pill"><input id="appreciation-3" type="radio" name="connection__appreciation" value="3"><label for="appreciation-3">3</label></div>
+    <div class="pill"><input id="appreciation-4" type="radio" name="connection__appreciation" value="4"><label for="appreciation-4">4</label></div>
+    <div class="pill"><input id="appreciation-5" type="radio" name="connection__appreciation" value="5"><label for="appreciation-5">5</label></div>
+    <div class="pill"><input id="appreciation-6" type="radio" name="connection__appreciation" value="6"><label for="appreciation-6">6</label></div>
+    <div class="pill"><input id="appreciation-7" type="radio" name="connection__appreciation" value="7"><label for="appreciation-7">7</label></div>
+    <div class="pill"><input id="appreciation-8" type="radio" name="connection__appreciation" value="8"><label for="appreciation-8">8</label></div>
+    <div class="pill"><input id="appreciation-9" type="radio" name="connection__appreciation" value="9"><label for="appreciation-9">9</label></div>
+    <div class="pill"><input id="appreciation-10" type="radio" name="connection__appreciation" value="10"><label for="appreciation-10">10</label></div>
+  </div>
+
+  <!-- live description for selected level -->
           <div class="hint" data-leveltext></div>
         </div>
       </div>
