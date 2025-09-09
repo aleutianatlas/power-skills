@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Power Skills — Aleutian Atlas</title>
+  <link rel="stylesheet" href="brand.css">
+  <style>
+    /* --- Landing tiles --- */
+    .areas-grid{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(220px, 1fr));
+      gap:14px;
+      margin-top:14px;
+    }
+    @media (max-width: 720px){
+      .areas-grid{ grid-template-columns: 1fr; }
+    }
+    .area-card{
+      display:flex; flex-direction:column; gap:6px;
+      background:#fff; border:1px solid var(--aa-border); border-radius:14px;
+      padding:16px; text-decoration:none; color:var(--aa-ink);
+      transition: box-shadow .15s ease, transform .06s ease, border-color .15s ease;
+    }
+    .area-card:hover{ box-shadow: var(--aa-shadow); border-color:#dfe9e9; }
+    .area-card:active{ transform: translateY(1px); }
+    .area-title{ font-weight:800; font-size:18px; margin:0; }
+    .area-desc{ color:var(--aa-muted); margin:0; font-size:14px; }
+    .area-meta{ font-size:12px; color:var(--aa-muted); margin-top:2px; }
+  </style>
+</head>
+<body>
+
+<!-- Brand Header -->
+<header class="aa-hero aa-hero--solo">
+  <div class="aa-hero-inner">
+    <!-- Left brand row -->
+    <div class="aa-brand">
+      <img class="aa-logo" src="assets/logo.png" alt="Aleutian Atlas Logo">
+      <div class="aa-title">
+        <span class="aa-aleutian">ALEUTIAN</span>
+        <span class="aa-atlas">ATLAS</span>
+      </div>
+    </div>
+
+    <!-- Centered tagline + subline -->
+    <div class="aa-taglines">
+      <div class="aa-claim" style="font-size:2.5rem">Navigate your career with confidence</div>
+      <p class="aa-sub">Assess your power skills to gain clarity on strengths, growth areas, and your unique path forward.</p>
+    </div>
+  </div>
+</header>
+
+<div class="wrapper">
+  <div class="card">
+    <h1 class="skill-title" style="font-size:22px; margin:0 0 6px;">Power Skills Inventory</h1>
+    <p class="skill-desc" style="margin:0 0 12px;">Choose a section below to begin. Each section groups related skills so you can complete the inventory in fewer forms.</p>
+
+    <div class="areas-grid">
+      <!-- 1. Adaptive Mindset -->
+      <a class="area-card" href="adaptive-mindset.html">
+        <h2 class="area-title">Adaptive Mindset</h2>
+        <p class="area-desc">Resilience, learning, critical thinking, innovation—how you respond, learn, and evolve.</p>
+        <div class="area-meta">~10–15 min • self-assessment</div>
+      </a>
+
+      <!-- 2. Collaboration & Influence -->
+      <a class="area-card" href="collaboration-influence.html">
+        <h2 class="area-title">Collaboration &amp; Influence</h2>
+        <p class="area-desc">Connection, communication, relationship building, listening, inclusion, writing.</p>
+        <div class="area-meta">~15–20 min • self-assessment</div>
+      </a>
+
+      <!-- 3. Execution & Dependability -->
+      <a class="area-card" href="execution-dependability.html">
+        <h2 class="area-title">Execution &amp; Dependability</h2>
+        <p class="area-desc">Planning, decision making, results orientation, initiative, dependability, values.</p>
+        <div class="area-meta">~15–20 min • self-assessment</div>
+      </a>
+
+      <!-- 4. Leadership & Strategy -->
+      <a class="area-card" href="leadership-strategy.html">
+        <h2 class="area-title">Leadership &amp; Strategy</h2>
+        <p class="area-desc">Strategic thinking, business thinking, expertise, leadership presence, influence at scale.</p>
+        <div class="area-meta">~15–20 min • self-assessment</div>
+      </a>
+
+      <!-- Pathfinder Survey -->
+      <a class="area-card" href="pathfinder.html" style="grid-column:1 / -1">
+        <h2 class="area-title">Pathfinder Survey</h2>
+        <p class="area-desc">Share your goals, context, and constraints to shape your personalized report and coaching plan.</p>
+        <div class="area-meta">~8–10 min • reflection</div>
+      </a>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
