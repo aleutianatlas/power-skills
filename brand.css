@@ -88,6 +88,8 @@ h1, h2, h3, .skill-title, .aa-title{
   margin: 0 auto;
   max-width: 900px;
 }
+/* Force left-align inside the overview/info card */
+.info-card .aa-sub { text-align: left; }
 
 
 /* hero card (if you use it) */
