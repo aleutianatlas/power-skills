@@ -250,42 +250,33 @@ textarea { min-height:120px; }
 .level-num label:hover { background:#f0fafa; }
 .level-desc { color:var(--aa-ink); }
 
-/* Solo hero layout (no right column card) */
+/* Solo hero layout */
 .aa-hero--solo .aa-hero-inner {
   grid-template-columns: 1fr;
-  padding-bottom: 72px; /* slight lift above cards */
+  padding-bottom: 72px;
 }
 
 /* Instruction card variant */
 .info-card {
-  margin-top: -44px; /* pull it up toward the hero edge */
+  margin-top: -44px;
   margin-bottom: 16px;
 }
 
-/* Center the entire hero block */
-.aa-hero--solo .aa-hero-inner {
-  display: grid;  /* keep grid if you had it */
-  justify-content: center; /* center the child column */
-}
-
-/* Center the brand block and its text */
-.aa-brand-block {
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  text-align:center;
-}
-
-/* Keep the logo + wordmark as a centered row */
+/* --- HERO BRAND + TAGLINES --- */
 .aa-brand {
   display:flex;
   align-items:center;
-  justify-content:center;
   gap:12px;
-  margin-bottom:10px;
+  justify-content:flex-start;  /* lock logo + wordmark left */
+  margin-bottom:6px;
 }
 
-/* Wordmark styles */
+.aa-logo {
+  max-height:60px;
+  width:auto;
+  display:block;
+}
+
 .aa-title {
   display:flex;
   gap:6px;
@@ -293,12 +284,22 @@ textarea { min-height:120px; }
   font-family:"Aptos","Segoe UI","Helvetica Neue",Arial,sans-serif;
   font-size:2rem;
   letter-spacing:1px;
+  text-transform:uppercase;
 }
 .aa-aleutian { font-weight:700; }
 .aa-atlas    { font-weight:300; }
 
+/* Taglines centered */
 .aa-claim {
+  text-align:center;
   font-size:1.75rem;
   font-weight:800;
-  margin-top:6px;
+  margin:8px auto 2px;
+  max-width:900px;
+}
+.aa-sub {
+  text-align:center;
+  color:#e6f3f4;
+  margin:0 auto;
+  max-width:900px;
 }
