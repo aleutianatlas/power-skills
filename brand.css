@@ -56,7 +56,23 @@ h1, h2, h3, .skill-title, .aa-title{
 }
 .aa-logo img{display:block; width:34px; height:34px; object-fit:contain}
 
-.aa-title{font-weight:800; letter-spacing:.2px; font-size:16px; opacity:.95}
+.aa-title {
+  font-family: "Aptos", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  font-size: 2rem;           /* adjust to taste */
+  letter-spacing: 1px;
+  display: flex;
+  gap: 6px;
+}
+
+.aa-aleutian {
+  font-weight: 700;          /* bold */
+}
+
+.aa-atlas {
+  font-weight: 300;          /* thin/light */
+}
+
+
 .aa-claim{font-weight:900; font-size:32px; line-height:1.1; margin:6px 0 10px}
 .aa-sub{color:#e6f3f4; margin:0}
 
