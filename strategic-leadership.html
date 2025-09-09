@@ -1,135 +1,658 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Power Skills — Step 1</title>
-<style>
-:root{--bg:#f8fafc;--card:#fff;--text:#0f172a;--muted:#475569;--accent:#186C74}
-*{box-sizing:border-box}body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Roboto,Segoe UI,Helvetica,Arial;background:var(--bg);color:var(--text)}
-.wrapper{max-width:760px;margin:48px auto;padding:0 16px}.card{background:var(--card);border-radius:16px;padding:24px;box-shadow:0 8px 30px rgba(2,8,23,.06)}
-h1{margin:0 0 8px}.lead{color:var(--muted)}
-fieldset{border:0;padding:0;margin:0 0 16px}legend{font-weight:600;margin-bottom:8px}
-.skill{margin-bottom:12px}.label{font-size:13px;color:var(--muted);display:block;margin-bottom:6px}
-.radios{display:grid;grid-template-columns:repeat(10,minmax(32px,1fr));gap:8px}
-.radios label{display:grid;place-items:center;border:1px solid #e2e8f0;padding:10px 0;border-radius:8px;cursor:pointer}
-.radios input{display:none}.radios input:checked+span{outline:2px solid var(--accent);outline-offset:-2px;border-radius:8px}
-.labels{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-top:6px}
-textarea,input{width:100%;padding:10px;border:1px solid #e2e8f0;border-radius:10px;font:inherit}
-.hr{height:1px;background:#e2e8f0;margin:16px 0}
-button{background:var(--accent);color:#fff;border:0;border-radius:12px;padding:12px 16px;font-weight:600;cursor:pointer}
-.small{font-size:12px;color:var(--muted)}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Connection — Aleutian Atlas Power Skills</title>
+  <link rel="stylesheet" href="brand.css">
+  <style>
+    /* Compact level rows */
+.levels{display:grid; gap:4px; margin:6px 0}
+.level-row{
+  display:grid; grid-template-columns: 36px 1fr; gap:8px;
+  align-items:center; font-size:13.5px; line-height:1.3;
+}
+.level-num input{display:none}
+.level-num label{
+  display:flex; align-items:center; justify-content:center;
+  width:32px; height:32px;
+  border:1.5px solid var(--aa-border);
+  border-radius:50%; cursor:pointer; font-weight:700;
+  background:#fff; color:var(--aa-ink);
+  transition:all .2s ease;
+}
+.level-num input:checked + label{
+  background:var(--aa-accent-2); color:#fff; border-color:var(--aa-accent-2);
+}
+.level-num label:hover{background:#EFBACD}
+.level-desc{color:var(--aa-ink)
+
+    }
+    .skill-card .label{margin-top:2px}
+  </style>
 </head>
 <body>
+
+<!-- Brand Header -->
+<header class="aa-hero aa-hero--solo">
+  <div class="aa-hero-inner">
+    <!-- Left brand row -->
+    <div class="aa-brand">
+      <img class="aa-logo" src="assets/logo.png" alt="Aleutian Atlas Logo">
+      <div class="aa-title">
+        <span class="aa-aleutian">ALEUTIAN</span>
+        <span class="aa-atlas">ATLAS</span>
+      </div>
+    </div>
+
+    <!-- Centered tagline + subline -->
+    <div class="aa-taglines">
+      <div class="aa-claim" style="font-size:2.5rem">Navigate your career with confidence</div>
+      <p class="aa-sub">Assess your power skills to gain clarity on strengths, growth areas, and your unique path forward.</p>
+    </div>
+  </div>
+</header>
+
+
+ 
 <div class="wrapper">
+  <div class="card info-card">
+      <p class="aa-sub" style="color:#0b2f33; margin:8px 0 12px;">
+      Welcome to the <strong>Collaboration &amp; Influence </strong> Assessment.
+      This survey focuses on your application of collaboration, communication, relationship building, influence, and writing skills.
+      To get the best results, please keep these guidelines in mind:
+    </p>
+
+    <ul style="margin:0 0 12px 18px; padding:0; color:#0b2f33;">
+      <li style="margin:0 0 8px;">
+        <strong>Complete in one sitting.</strong>
+        Plan for about one hour to reflect and respond thoughtfully so your progress isn’t lost.
+      </li>
+      <li style="margin:0 0 8px;">
+        <strong>Draw from your recent experience.</strong>
+        Think about how you’ve demonstrated these skills in your most recent roles and responsibilities.
+        Answer based on the behaviors you use most often—not what you could do if asked, but what you actually do day to day.
+      </li>
+      <li style="margin:0 0 8px;">
+        <strong>Answer honestly.</strong>
+        There are no right or wrong answers. The goal is to capture your current use of this skill so you can gain meaningful insights into strengths and growth areas.
+      </li>
+    </ul>
+
+    <p class="aa-sub" style="color:#355b60; margin:0;">When you’re ready, begin below.</p>
+  </div>
+</div>
+
+<div class="wrapper">  
   <div class="card">
-    <h1>Step 1 — Strategic Leadership</h1>
-    <p class="lead">Rate each from 1 (Low) to 10 (High).</p>
 
     <!-- Replace with your Formspree endpoint -->
-    <form action="https://formspree.io/f/mqadwrgb" method="POST" data-step="1" data-next="collaboration.html">
-      <fieldset>
-        <legend>Strategic Leadership</legend>
+    <form action="https://formspree.io/f/YOUR_CONNECTION_FORM_ID"
+          method="POST"
+          data-step="connection"
+          data-next="thanks.html">
 
-        <!-- Reusable radio rows -->
-        <div class="skill">
-          <span class="label">Strategic Planning</span>
-          <div class="radios">
-            <!-- name=group__field -->
-            <!-- 1..10 -->
-            <label><input type="radio" name="step1__strategic_planning" value="1" required><span>1</span></label>
-            <label><input type="radio" name="step1__strategic_planning" value="2"><span>2</span></label>
-            <label><input type="radio" name="step1__strategic_planning" value="3"><span>3</span></label>
-            <label><input type="radio" name="step1__strategic_planning" value="4"><span>4</span></label>
-            <label><input type="radio" name="step1__strategic_planning" value="5"><span>5</span></label>
-            <label><input type="radio" name="step1__strategic_planning" value="6"><span>6</span></label>
-            <label><input type="radio" name="step1__strategic_planning" value="7"><span>7</span></label>
-            <label><input type="radio" name="step1__strategic_planning" value="8"><span>8</span></label>
-            <label><input type="radio" name="step1__strategic_planning" value="9"><span>9</span></label>
-            <label><input type="radio" name="step1__strategic_planning" value="10"><span>10</span></label>
+      <!-- Identity -->
+      <div class="skill-card" style="margin-bottom:18px">
+        <div class="skill-head">
+          <div>
+            <h3 class="skill-title">Your Info</h3>
+            <p class="skill-desc">We include your name & email with your responses for reporting.</p>
           </div>
-          <div class="labels"><span>Low</span><span>High</span></div>
         </div>
+        <div class="skill-body">
+          <label class="label" for="name">Full name</label>
+          <input id="name" name="name" type="text" required>
+          <label class="label" for="email">Email</label>
+          <input id="email" name="email" type="email" required>
+        </div>
+      </div>
 
-        <div class="skill">
-          <span class="label">Change Leadership</span>
-          <div class="radios">
-            <label><input type="radio" name="step1__change_leadership" value="1" required><span>1</span></label>
-            <label><input type="radio" name="step1__change_leadership" value="2"><span>2</span></label>
-            <label><input type="radio" name="step1__change_leadership" value="3"><span>3</span></label>
-            <label><input type="radio" name="step1__change_leadership" value="4"><span>4</span></label>
-            <label><input type="radio" name="step1__change_leadership" value="5"><span>5</span></label>
-            <label><input type="radio" name="step1__change_leadership" value="6"><span>6</span></label>
-            <label><input type="radio" name="step1__change_leadership" value="7"><span>7</span></label>
-            <label><input type="radio" name="step1__change_leadership" value="8"><span>8</span></label>
-            <label><input type="radio" name="step1__change_leadership" value="9"><span>9</span></label>
-            <label><input type="radio" name="step1__change_leadership" value="10"><span>10</span></label>
+      <!-- ===== SKILLS (each shows 0–10 with descriptions) ===== -->
+
+      <!-- Appreciation -->
+<div class="skill-card">
+  <div class="skill-head">
+    <div>
+      <h3 class="skill-title">Appreciation</h3>
+      <p class="skill-desc">Calls out good work and says thank you. Makes sure people get credit and feel valued for what they do.</p>
+    </div>
+  </div>
+  <div class="skill-body">
+    <span class="label">Choose one level</span>
+    <div class="levels">
+      
+      <div class="level-row">
+        <span class="level-num"><input type="radio" id="app-0" name="connection__appreciation" value="0" required><label for="app-0">0</label></span>
+	<span class="level-desc">I don’t often think to express appreciation at work.</span>
+      </div>
+
+      <div class="level-row">
+	<span class="level-num"><input type="radio" id="app-1" name="connection__appreciation" value="1"><label for="app-1">1</label></span>
+        <span class="level-desc">I say thank you occasionally but not consistently.</span>
+      </div>
+
+      <div class="level-row">
+        <span class="level-num"><input type="radio" id="app-2" name="connection__appreciation" value="2"><label for="app-2">2</label></span>
+        <span class="level-desc">I recognize contributions when prompted, like during formal reviews.</span>
+      </div>
+
+      <div class="level-row">
+        <span class="level-num"><input type="radio" id="app-3" name="connection__appreciation" value="3" required><label for="app-3">3</label></span>
+        <span class="level-desc">I make an effort to thank people in small ways, though sometimes I forget.</span>
+      </div>
+
+      <div class="level-row">
+        <span class="level-num"><input type="radio" id="app-4" name="connection__appreciation" value="4"><label for="app-4">4</label></span>
+        <span class="level-desc">I notice good work and share appreciation when it stands out.</span>
+      </div>
+
+      <div class="level-row">
+        <span class="level-num"><input type="radio" id="app-5" name="connection__appreciation" value="5"><label for="app-5">5</label></span>
+        <span class="level-desc">I regularly say thank you and make sure people feel noticed.</span>
+      </div>
+
+      <div class="level-row">
+        <span class="level-num"><input type="radio" id="app-6" name="connection__appreciation" value="6"><label for="app-6">6</label></span>
+        <span class="level-desc">I personalize my appreciation, recognizing people in ways meaningful to them.</span>
+      </div>      
+
+      <div class="level-row">
+        <span class="level-num"><input type="radio" id="app-7" name="connection__appreciation" value="7"><label for="app-7">7</label></span>
+        <span class="level-desc">I highlight contributions publicly so people get visible credit.</span>
+      </div>   
+
+      <div class="level-row">
+        <span class="level-num"><input type="radio" id="app-8" name="connection__appreciation" value="8"><label for="app-8">8</label></span>
+        <span class="level-desc">I create team habits of appreciation, like shout-outs in meetings.</span>
+      </div> 
+
+      <div class="level-row">
+        <span class="level-num"><input type="radio" id="app-9" name="connection__appreciation" value="9"><label for="app-9">9</label></span>
+        <span class="level-desc">I build a culture where recognition flows naturally among teammates.</span>
+      </div> 
+
+      <div class="level-row">
+        <span class="level-num"><input type="radio" id="app-10" name="connection__appreciation" value="10"><label for="app-10">10</label></span>
+        <span class="level-desc">I’m known for making people feel valued and inspiring others to spread appreciation.</span>
+      </div> 
+       
           </div>
-          <div class="labels"><span>Low</span><span>High</span></div>
         </div>
+      </div>
 
-        <div class="skill">
-          <span class="label">High-Stakes Judgment</span>
-          <div class="radios">
-            <label><input type="radio" name="step1__high_stakes_judgment" value="1" required><span>1</span></label>
-            <label><input type="radio" name="step1__high_stakes_judgment" value="2"><span>2</span></label>
-            <label><input type="radio" name="step1__high_stakes_judgment" value="3"><span>3</span></label>
-            <label><input type="radio" name="step1__high_stakes_judgment" value="4"><span>4</span></label>
-            <label><input type="radio" name="step1__high_stakes_judgment" value="5"><span>5</span></label>
-            <label><input type="radio" name="step1__high_stakes_judgment" value="6"><span>6</span></label>
-            <label><input type="radio" name="step1__high_stakes_judgment" value="7"><span>7</span></label>
-            <label><input type="radio" name="step1__high_stakes_judgment" value="8"><span>8</span></label>
-            <label><input type="radio" name="step1__high_stakes_judgment" value="9"><span>9</span></label>
-            <label><input type="radio" name="step1__high_stakes_judgment" value="10"><span>10</span></label>
+      <!-- Compassion -->
+      <div class="skill-card">
+        <div class="skill-head">
+          <div>
+            <h3 class="skill-title">Compassion</h3>
+            <p class="skill-desc">Pays attention to how people are doing and responds with care. Checks in when someone seems off and shows up with kindness, not criticism.</p>
           </div>
-          <div class="labels"><span>Low</span><span>High</span></div>
         </div>
+        <div class="skill-body">
+          <span class="label">Choose one level</span>
+<div class="levels">
+  <div class="level-row">
+    <span class="level-num">
+      <input type="radio" id="comp-0" name="connection__compassion" value="0" required>
+      <label for="comp-0">0</label>
+    </span>
+    <span class="level-desc">I don’t usually think about how people are feeling at work.</span>
+  </div>
 
-        <div class="skill">
-          <span class="label">Stakeholder Influence</span>
-          <div class="radios">
-            <label><input type="radio" name="step1__stakeholder_influence" value="1" required><span>1</span></label>
-            <label><input type="radio" name="step1__stakeholder_influence" value="2"><span>2</span></label>
-            <label><input type="radio" name="step1__stakeholder_influence" value="3"><span>3</span></label>
-            <label><input type="radio" name="step1__stakeholder_influence" value="4"><span>4</span></label>
-            <label><input type="radio" name="step1__stakeholder_influence" value="5"><span>5</span></label>
-            <label><input type="radio" name="step1__stakeholder_influence" value="6"><span>6</span></label>
-            <label><input type="radio" name="step1__stakeholder_influence" value="7"><span>7</span></label>
-            <label><input type="radio" name="step1__stakeholder_influence" value="8"><span>8</span></label>
-            <label><input type="radio" name="step1__stakeholder_influence" value="9"><span>9</span></label>
-            <label><input type="radio" name="step1__stakeholder_influence" value="10"><span>10</span></label>
+  <div class="level-row">
+    <span class="level-num">
+      <input type="radio" id="comp-1" name="connection__compassion" value="1">
+      <label for="comp-1">1</label>
+    </span>
+    <span class="level-desc">I notice when someone is clearly upset but don’t know what to do.</span>
+  </div>
+
+  <div class="level-row">
+    <span class="level-num">
+      <input type="radio" id="comp-2" name="connection__compassion" value="2">
+      <label for="comp-2">2</label>
+    </span>
+    <span class="level-desc">I feel concerned for others but may hesitate to reach out.</span>
+  </div>
+
+  <div class="level-row">
+    <span class="level-num">
+      <input type="radio" id="comp-3" name="connection__compassion" value="3">
+      <label for="comp-3">3</label>
+    </span>
+    <span class="level-desc">I’ve started checking in, even if it’s just saying, “You seem quiet today.”</span>
+  </div>
+
+  <div class="level-row">
+    <span class="level-num">
+      <input type="radio" id="comp-4" name="connection__compassion" value="4">
+      <label for="comp-4">4</label>
+    </span>
+    <span class="level-desc">I offer support when I sense someone needs it, like giving them space or encouragement.</span>
+  </div>
+
+  <div class="level-row">
+    <span class="level-num">
+      <input type="radio" id="comp-5" name="connection__compassion" value="5">
+      <label for="comp-5">5</label>
+    </span>
+    <span class="level-desc">I regularly show care by asking how people are doing and offering help.</span>
+  </div>
+
+  <div class="level-row">
+    <span class="level-num">
+      <input type="radio" id="comp-6" name="connection__compassion" value="6">
+      <label for="comp-6">6</label>
+    </span>
+    <span class="level-desc">I balance care with accountability, showing kindness while keeping work moving.</span>
+  </div>
+
+  <div class="level-row">
+    <span class="level-num">
+      <input type="radio" id="comp-7" name="connection__compassion" value="7">
+      <label for="comp-7">7</label>
+    </span>
+    <span class="level-desc">I anticipate when people might need extra support and adjust my approach.</span>
+  </div>
+
+  <div class="level-row">
+    <span class="level-num">
+      <input type="radio" id="comp-8" name="connection__compassion" value="8">
+      <label for="comp-8">8</label>
+    </span>
+    <span class="level-desc">I encourage compassion across the team, modeling it in daily interactions.</span>
+  </div>
+
+  <div class="level-row">
+    <span class="level-num">
+      <input type="radio" id="comp-9" name="connection__compassion" value="9">
+      <label for="comp-9">9</label>
+    </span>
+    <span class="level-desc">I build a culture where people support one another in both personal and professional challenges.</span>
+  </div>
+
+  <div class="level-row">
+    <span class="level-num">
+      <input type="radio" id="comp-10" name="connection__compassion" value="10">
+      <label for="comp-10">10</label>
+    </span>
+    <span class="level-desc">I’m known as someone who leads with compassion and helps others bring kindness into their work.</span>
+  </div>
+</div>
+
+        </div>
+      </div>
+
+            <!-- Empathy -->
+<div class="skill-card">
+  <div class="skill-head">
+    <div>
+      <h3 class="skill-title">Empathy</h3>
+      <p class="skill-desc">Tunes into how others are feeling and thinking. Pays attention to tone, body language, and subtle cues to better understand their experience.</p>
+    </div>
+  </div>
+  <div class="skill-body">
+    <span class="label">Select one level</span>
+    <div class="levels">
+      
+      <div class="level-row">
+        <span class="level-num"><input type="radio" id="emp-0" name="connection__empathy" value="0" required><label for="emp-0">0</label></span>
+	<span class="level-desc">I haven’t thought much about how others are feeling during interactions.</span>
+      </div>
+
+      <div class="level-row">
+	<span class="level-num"><input type="radio" id="emp-1" name="connection__empathy" value="1"><label for="emp-1">1</label></span>
+        <span class="level-desc">I notice big emotional signals (like someone crying) but not subtle ones.</span>
+      </div>
+
+      <div class="level-row">
+        <span class="level-num"><input type="radio" id="emp-2" name="connection__empathy" value="2"><label for="emp-2">2</label></span>
+        <span class="level-desc">I can see when others are stressed or upset, though I’m not always sure what to do.</span>
+      </div>
+
+      <div class="level-row">
+        <span class="level-num"><input type="radio" id="emp-3" name="connection__empathy" value="3" required><label for="emp-3">3</label></span>
+        <span class="level-desc">I’ve started to pay more attention to tone and facial expressions, but I don’t always respond in the moment.</span>
+      </div>
+
+      <div class="level-row">
+        <span class="level-num"><input type="radio" id="emp-4" name="connection__empathy" value="4"><label for="emp-4">4</label></span>
+        <span class="level-desc">I check in when someone seems off, even if it’s just, “Are you okay?”</span>
+      </div>
+
+      <div class="level-row">
+        <span class="level-num"><input type="radio" id="emp-5" name="connection__empathy" value="5"><label for="emp-5">5</label></span>
+        <span class="level-desc">I regularly tune into tone and body language and adjust how I respond.</span>
+      </div>
+
+      <div class="level-row">
+        <span class="level-num"><input type="radio" id="emp-6" name="connection__empathy" value="6"><label for="emp-6">6</label></span>
+        <span class="level-desc">I connect with others by noticing subtle cues, like when someone goes quiet in a meeting, and I follow up afterward.</span>
+      </div>      
+
+      <div class="level-row">
+        <span class="level-num"><input type="radio" id="emp-7" name="connection__empathy" value="7"><label for="emp-7">7</label></span>
+        <span class="level-desc">I can anticipate how someone might feel in a situation and adapt before issues arise.</span>
+      </div>   
+
+      <div class="level-row">
+        <span class="level-num"><input type="radio" id="emp-8" name="connection__empathy" value="8"><label for="emp-8">8</label></span>
+        <span class="level-desc">I help others build empathy, modeling ways to read the room and connect with people’s experiences.</span>
+      </div> 
+
+      <div class="level-row">
+        <span class="level-num"><input type="radio" id="emp-9" name="connection__empathy" value="9"><label for="emp-9">9</label></span>
+        <span class="level-desc">I create team environments where empathy is valued and practiced openly.</span>
+      </div> 
+
+      <div class="level-row">
+        <span class="level-num"><input type="radio" id="emp-10" name="connection__empathy" value="10"><label for="emp-10">10</label></span>
+        <span class="level-desc">I’m known for my empathy, both inside and outside the team. People often seek me out because they feel understood and supported.</span>
+      </div> 
+       
           </div>
-          <div class="labels"><span>Low</span><span>High</span></div>
         </div>
+      </div>
 
-        <div class="skill">
-          <span class="label">Risk Awareness</span>
-          <div class="radios">
-            <label><input type="radio" name="step1__risk_awareness" value="1" required><span>1</span></label>
-            <label><input type="radio" name="step1__risk_awareness" value="2"><span>2</span></label>
-            <label><input type="radio" name="step1__risk_awareness" value="3"><span>3</span></label>
-            <label><input type="radio" name="step1__risk_awareness" value="4"><span>4</span></label>
-            <label><input type="radio" name="step1__risk_awareness" value="5"><span>5</span></label>
-            <label><input type="radio" name="step1__risk_awareness" value="6"><span>6</span></label>
-            <label><input type="radio" name="step1__risk_awareness" value="7"><span>7</span></label>
-            <label><input type="radio" name="step1__risk_awareness" value="8"><span>8</span></label>
-            <label><input type="radio" name="step1__risk_awareness" value="9"><span>9</span></label>
-            <label><input type="radio" name="step1__risk_awareness" value="10"><span>10</span></label>
-          </div>
-          <div class="labels"><span>Low</span><span>High</span></div>
-        </div>
-      </fieldset>
+<!-- Listening -->
+<div class="skill-card">
+  <div class="skill-head">
+    <div>
+      <h3 class="skill-title">Listening</h3>
+      <p class="skill-desc">Gives others full attention when they speak. Listens fully and reflects before responding.</p>
+    </div>
+  </div>
+  <div class="skill-body">
+    <span class="label">Select one level</span>
+    <div class="levels">
 
-      <label class="label" for="step1_notes">Notes (optional)</label>
-      <textarea id="step1_notes" name="step1_notes" rows="4"></textarea>
+      <div class="level-row">
+        <span class="level-num"><input type="radio" id="lis-0" name="connection__listening" value="0" required><label for="lis-0">0</label></span>
+        <span class="level-desc">I haven’t paid much attention to my listening habits.</span>
+      </div>
 
-      <input type="hidden" name="_redirect" value="collaboration.html" />
-      <label style="display:none;">Leave this empty:<input name="_gotcha"></label>
+      <div class="level-row">
+        <span class="level-num"><input type="radio" id="lis-1" name="connection__listening" value="1"><label for="lis-1">1</label></span>
+        <span class="level-desc">I often multitask or think ahead while someone is talking.</span>
+      </div>
+
+      <div class="level-row">
+        <span class="level-num"><input type="radio" id="lis-2" name="connection__listening" value="2"><label for="lis-2">2</label></span>
+        <span class="level-desc">I notice when I interrupt but find it hard to stop myself.</span>
+      </div>
+
+      <div class="level-row">
+        <span class="level-num"><input type="radio" id="lis-3" name="connection__listening" value="3"><label for="lis-3">3</label></span>
+        <span class="level-desc">I’ve started practicing listening without cutting in, though I sometimes drift off.</span>
+      </div>
+
+      <div class="level-row">
+        <span class="level-num"><input type="radio" id="lis-4" name="connection__listening" value="4"><label for="lis-4">4</label></span>
+        <span class="level-desc">I’m able to focus during important conversations, even if I still miss details.</span>
+      </div>
+
+      <div class="level-row">
+        <span class="level-num"><input type="radio" id="lis-5" name="connection__listening" value="5"><label for="lis-5">5</label></span>
+        <span class="level-desc">I regularly listen without interrupting and reflect before responding.</span>
+      </div>
+
+      <div class="level-row">
+        <span class="level-num"><input type="radio" id="lis-6" name="connection__listening" value="6"><label for="lis-6">6</label></span>
+        <span class="level-desc">I show I’m listening by paraphrasing or asking clarifying questions.</span>
+      </div>
+
+      <div class="level-row">
+        <span class="level-num"><input type="radio" id="lis-7" name="connection__listening" value="7"><label for="lis-7">7</label></span>
+        <span class="level-desc">I adapt my listening style based on the speaker, making them feel heard.</span>
+      </div>
+
+      <div class="level-row">
+        <span class="level-num"><input type="radio" id="lis-8" name="connection__listening" value="8"><label for="lis-8">8</label></span>
+        <span class="level-desc">I help others improve their listening skills by modeling attentive presence.</span>
+      </div>
+
+      <div class="level-row">
+        <span class="level-num"><input type="radio" id="lis-9" name="connection__listening" value="9"><label for="lis-9">9</label></span>
+        <span class="level-desc">I create spaces where people feel safe to share because they know they’ll be heard.</span>
+      </div>
+
+      <div class="level-row">
+        <span class="level-num"><input type="radio" id="lis-10" name="connection__listening" value="10"><label for="lis-10">10</label></span>
+        <span class="level-desc">I’m recognized for deep, active listening that strengthens trust and relationships.</span>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- Openness -->
+<div class="skill-card">
+  <div class="skill-head">
+    <div>
+      <h3 class="skill-title">Openness</h3>
+      <p class="skill-desc">Welcomes a wide range of people and perspectives. Respects differences and avoids jumping to conclusions or judging.</p>
+    </div>
+  </div>
+  <div class="skill-body">
+    <span class="label">Select one level</span>
+    <div class="levels">
+
+      <div class="level-row">
+        <span class="level-num"><input type="radio" id="ope-0" name="connection__openness" value="0" required><label for="ope-0">0</label></span>
+        <span class="level-desc">I haven’t reflected much on how I respond to differences.</span>
+      </div>
+
+      <div class="level-row">
+        <span class="level-num"><input type="radio" id="ope-1" name="connection__openness" value="1"><label for="ope-1">1</label></span>
+        <span class="level-desc">I notice differences but may feel uncertain about how to engage.</span>
+      </div>
+
+      <div class="level-row">
+        <span class="level-num"><input type="radio" id="ope-2" name="connection__openness" value="2"><label for="ope-2">2</label></span>
+        <span class="level-desc">I try not to judge, though I may still default to familiar perspectives.</span>
+      </div>
+
+      <div class="level-row">
+        <span class="level-num"><input type="radio" id="ope-3" name="connection__openness" value="3"><label for="ope-3">3</label></span>
+        <span class="level-desc">I’m beginning to ask questions instead of assuming I understand.</span>
+      </div>
+
+      <div class="level-row">
+        <span class="level-num"><input type="radio" id="ope-4" name="connection__openness" value="4"><label for="ope-4">4</label></span>
+        <span class="level-desc">I show openness in familiar settings but hesitate in unfamiliar ones.</span>
+      </div>
+
+      <div class="level-row">
+        <span class="level-num"><input type="radio" id="ope-5" name="connection__openness" value="5"><label for="ope-5">5</label></span>
+        <span class="level-desc">I regularly listen with curiosity to perspectives that differ from mine.</span>
+      </div>
+
+      <div class="level-row">
+        <span class="level-num"><input type="radio" id="ope-6" name="connection__openness" value="6"><label for="ope-6">6</label></span>
+        <span class="level-desc">I adjust my approach to make others feel welcome and respected.</span>
+      </div>
+
+      <div class="level-row">
+        <span class="level-num"><input type="radio" id="ope-7" name="connection__openness" value="7"><label for="ope-7">7</label></span>
+        <span class="level-desc">I encourage the team to explore diverse perspectives before making decisions.</span>
+      </div>
+
+      <div class="level-row">
+        <span class="level-num"><input type="radio" id="ope-8" name="connection__openness" value="8"><label for="ope-8">8</label></span>
+        <span class="level-desc">I model openness by being transparent about my own assumptions and learning from others.</span>
+      </div>
+
+      <div class="level-row">
+        <span class="level-num"><input type="radio" id="ope-9" name="connection__openness" value="9"><label for="ope-9">9</label></span>
+        <span class="level-desc">I foster a culture where differences are valued and embraced.</span>
+      </div>
+
+      <div class="level-row">
+        <span class="level-num"><input type="radio" id="ope-10" name="connection__openness" value="10"><label for="ope-10">10</label></span>
+        <span class="level-desc">I’m recognized for creating environments where people feel free to bring their full selves.</span>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- Respectfulness -->
+<div class="skill-card">
+  <div class="skill-head">
+    <div>
+      <h3 class="skill-title">Respectfulness</h3>
+      <p class="skill-desc">Stays calm and kind, even under pressure. Treats people with basic decency and keeps communication professional.</p>
+    </div>
+  </div>
+  <div class="skill-body">
+    <span class="label">Select one level</span>
+    <div class="levels">
+
+      <div class="level-row">
+        <span class="level-num"><input type="radio" id="res-0" name="connection__respectfulness" value="0" required><label for="res-0">0</label></span>
+        <span class="level-desc">I haven’t thought much about how I come across under stress.</span>
+      </div>
+
+      <div class="level-row">
+        <span class="level-num"><input type="radio" id="res-1" name="connection__respectfulness" value="1"><label for="res-1">1</label></span>
+        <span class="level-desc">I sometimes react quickly without considering tone.</span>
+      </div>
+
+      <div class="level-row">
+        <span class="level-num"><input type="radio" id="res-2" name="connection__respectfulness" value="2"><label for="res-2">2</label></span>
+        <span class="level-desc">I recognize when I’ve been short but may not correct it right away.</span>
+      </div>
+
+      <div class="level-row">
+        <span class="level-num"><input type="radio" id="res-3" name="connection__respectfulness" value="3"><label for="res-3">3</label></span>
+        <span class="level-desc">I try to stay polite but can slip when frustrated.</span>
+      </div>
+
+      <div class="level-row">
+        <span class="level-num"><input type="radio" id="res-4" name="connection__respectfulness" value="4"><label for="res-4">4</label></span>
+        <span class="level-desc">I usually keep my communication professional, even in challenging moments.</span>
+      </div>
+
+      <div class="level-row">
+        <span class="level-num"><input type="radio" id="res-5" name="connection__respectfulness" value="5"><label for="res-5">5</label></span>
+        <span class="level-desc">I consistently show respect in everyday interactions.</span>
+      </div>
+
+      <div class="level-row">
+        <span class="level-num"><input type="radio" id="res-6" name="connection__respectfulness" value="6"><label for="res-6">6</label></span>
+        <span class="level-desc">I manage pressure without letting it affect how I treat others.</span>
+      </div>
+
+      <div class="level-row">
+        <span class="level-num"><input type="radio" id="res-7" name="connection__respectfulness" value="7"><label for="res-7">7</label></span>
+        <span class="level-desc">I set an example by staying respectful in high-stakes or tense situations.</span>
+      </div>
+
+      <div class="level-row">
+        <span class="level-num"><input type="radio" id="res-8" name="connection__respectfulness" value="8"><label for="res-8">8</label></span>
+        <span class="level-desc">I encourage respectful dialogue within the team, even during conflict.</span>
+      </div>
+
+      <div class="level-row">
+        <span class="level-num"><input type="radio" id="res-9" name="connection__respectfulness" value="9"><label for="res-9">9</label></span>
+        <span class="level-desc">I influence culture by reinforcing respectful norms across groups.</span>
+      </div>
+
+      <div class="level-row">
+        <span class="level-num"><input type="radio" id="res-10" name="connection__respectfulness" value="10"><label for="res-10">10</label></span>
+        <span class="level-desc">I’m recognized for treating people with dignity and setting the standard for respectful communication.</span>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+		<!-- Inclusion -->
+<div class="skill-card">
+  <div class="skill-head">
+    <div>
+      <h3 class="skill-title">Inclusion</h3>
+      <p class="skill-desc">Brings others into the process. Seeks out opinions, values feedback, and makes sure everyone feels heard before decisions are made.</p>
+    </div>
+  </div>
+  <div class="skill-body">
+    <span class="label">Select one level</span>
+    <div class="levels">
+
+      <div class="level-row">
+        <span class="level-num"><input type="radio" id="inc-0" name="connection__inclusion" value="0" required><label for="inc-0">0</label></span>
+        <span class="level-desc">I haven’t really thought about inclusion in my work yet. Most of the time, I just make decisions on my own because that’s what my role requires.</span>
+      </div>
+
+      <div class="level-row">
+        <span class="level-num"><input type="radio" id="inc-1" name="connection__inclusion" value="1"><label for="inc-1">1</label></span>
+        <span class="level-desc">I know inclusion matters, but I’m not sure what it looks like in practice. Sometimes I run meetings without realizing a few people never spoke up.</span>
+      </div>
+
+      <div class="level-row">
+        <span class="level-num"><input type="radio" id="inc-2" name="connection__inclusion" value="2"><label for="inc-2">2</label></span>
+        <span class="level-desc">I notice when others make space for more voices and I see how valuable that is. For example, when a colleague asks for quieter folks’ input, I think, “That’s a good idea — I should try that.”</span>
+      </div>
+
+      <div class="level-row">
+        <span class="level-num"><input type="radio" id="inc-3" name="connection__inclusion" value="3"><label for="inc-3">3</label></span>
+        <span class="level-desc">I’ve started to ask for input in simple situations. In meetings, I might say, “Does anyone else have thoughts?” but I don’t always follow up if no one responds.</span>
+      </div>
+
+      <div class="level-row">
+        <span class="level-num"><input type="radio" id="inc-4" name="connection__inclusion" value="4"><label for="inc-4">4</label></span>
+        <span class="level-desc">I’m making more intentional efforts to include others. Sometimes I’ll reach out after a meeting and say, “I’d love your perspective on this before we move forward.”</span>
+      </div>
+
+      <div class="level-row">
+        <span class="level-num"><input type="radio" id="inc-5" name="connection__inclusion" value="5"><label for="inc-5">5</label></span>
+        <span class="level-desc">I regularly ask for feedback before making everyday decisions. For example, I’ll send a draft to my team and say, “Any feedback before we lock this in?”</span>
+      </div>
+
+      <div class="level-row">
+        <span class="level-num"><input type="radio" id="inc-6" name="connection__inclusion" value="6"><label for="inc-6">6</label></span>
+        <span class="level-desc">I make sure a variety of voices are heard, even in bigger discussions. If I notice the same people talking, I’ll pause and say, “I’d like to hear from folks we haven’t heard yet.”</span>
+      </div>
+
+      <div class="level-row">
+        <span class="level-num"><input type="radio" id="inc-7" name="connection__inclusion" value="7"><label for="inc-7">7</label></span>
+        <span class="level-desc">I anticipate who needs to be part of a decision and bring them in early. For example, before kicking off a project, I’ll think, “We should get Operations involved now — let’s invite them.”</span>
+      </div>
+
+      <div class="level-row">
+        <span class="level-num"><input type="radio" id="inc-8" name="connection__inclusion" value="8"><label for="inc-8">8</label></span>
+        <span class="level-desc">I’ve built habits and structures that keep inclusion consistent. I might rotate who leads our meetings or use surveys so everyone has a chance to contribute.</span>
+      </div>
+
+      <div class="level-row">
+        <span class="level-num"><input type="radio" id="inc-9" name="connection__inclusion" value="9"><label for="inc-9">9</label></span>
+        <span class="level-desc">I help shape the culture of my team so inclusion becomes the norm. I encourage everyone to build processes where multiple perspectives are always considered before big decisions.</span>
+      </div>
+
+      <div class="level-row">
+        <span class="level-num"><input type="radio" id="inc-10" name="connection__inclusion" value="10"><label for="inc-10">10</label></span>
+        <span class="level-desc">I'm recognized for shaping the culture at the organization level so inclusion becomes the norm. I encourage everyone to build processes where multiple perspectives are always considered before big decisions.</span>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
       <div class="hr"></div>
-      <button type="submit">Submit Step 1 & Continue</button>
+      <div style="display:flex; gap:10px; flex-wrap:wrap">
+        <button class="btn primary" type="submit" name="_action" value="report">Submit</button>
+        <button class="btn ghost" type="submit" name="_action" value="menu">Return to Skills Menu</button>
+      </div>
+      <p class="aa-foot">© Aleutian Atlas</p>
     </form>
   </div>
 </div>
+
+<!-- shared behaviors -->
 <script src="app.js"></script>
 </body>
 </html>
