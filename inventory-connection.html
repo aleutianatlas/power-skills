@@ -177,11 +177,9 @@
         </div>
         <div class="skill-body">
           <label class="label">Select your level (0–10)</label>
-          <select name="connection__inclusion" required data-levelpicker>
-            <option value="" selected>— Choose —</option>
-            <option>0</option><option>1</option><option>2</option><option>3</option><option>4</option>
-            <option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option>
-          </select>
+       <select name="connection__appreciation" required data-levelpicker>
+         <option value="" selected>— Choose —</option>
+       </select>
           <div class="hint" data-leveltext></div>
         </div>
       </div>
@@ -201,7 +199,7 @@
 
 <!-- inline: level text map + live preview -->
 <script>
-/* Proficiency text map (trimmed to your wording). */
+/* 1) Level text map (same as before) */
 const AA_LEVELS = {
   appreciation: {
     0:"I don’t often think to express appreciation at work.",
@@ -240,7 +238,7 @@ const AA_LEVELS = {
     7:"I can anticipate how someone might feel in a situation and adapt before issues arise.",
     8:"I help others build empathy, modeling ways to read the room and connect with people’s experiences.",
     9:"I create team environments where empathy is valued and practiced openly.",
-    10:"I’m known for my empathy, both inside and outside the team. People often seek me out because they feel understood and supported."
+    10:"I’m known for my empathy; people seek me out because they feel understood and supported."
   },
   listening: {
     0:"I haven’t paid much attention to my listening habits.",
@@ -282,33 +280,43 @@ const AA_LEVELS = {
     10:"I’m recognized for treating people with dignity and setting the standard for respectful communication."
   },
   inclusion: {
-    0:"I haven’t really thought about inclusion in my work yet. Most of the time, I just make decisions on my own because that’s what my role requires.",
-    1:"I know inclusion matters, but I’m not sure what it looks like in practice. Sometimes I run meetings without realizing a few people never spoke up.",
-    2:"I notice when others make space for more voices and I see how valuable that is.",
-    3:"I’ve started to ask for input in simple situations. In meetings, I might say, “Does anyone else have thoughts?”",
-    4:"I’m making more intentional efforts to include others. Sometimes I’ll reach out after a meeting to get perspective.",
+    0:"I haven’t really thought about inclusion in my work yet…",
+    1:"I know inclusion matters, but I’m not sure what it looks like in practice…",
+    2:"I notice when others make space for more voices and see how valuable that is.",
+    3:"I’ve started to ask for input in simple situations…",
+    4:"I’m making more intentional efforts to include others…",
     5:"I regularly ask for feedback before making everyday decisions.",
-    6:"I make sure a variety of voices are heard, even in bigger discussions; I invite perspectives we haven’t heard yet.",
-    7:"I anticipate who needs to be involved and bring them in early.",
-    8:"I’ve built habits/structures that keep inclusion consistent (rotating leads, async surveys, etc.).",
-    9:"I help shape the culture so inclusion becomes the norm; we consider multiple perspectives before big decisions.",
-    10:"I’m recognized for shaping inclusion at the organization level; multiple perspectives are a standard before decisions."
+    6:"I make sure a variety of voices are heard, even in bigger discussions.",
+    7:"I anticipate who needs to be part of a decision and bring them in early.",
+    8:"I’ve built habits/structures so inclusion happens consistently.",
+    9:"I help shape the culture so inclusion becomes the norm.",
+    10:"I’m recognized for shaping inclusion at the organization level."
   }
 };
 
+/* 2) Build options + live description */
 (function(){
   document.querySelectorAll('.skill-card').forEach(card=>{
     const key = card.getAttribute('data-skill');
-    const picker = card.querySelector('[data-levelpicker]');
-    const target = card.querySelector('[data-leveltext]');
-    if (!picker || !target || !AA_LEVELS[key]) return;
-    const setText = (v)=>{
-      const t = AA_LEVELS[key][v];
-      target.textContent = t ? `${v} – ${t}` : '';
-    };
-    picker.addEventListener('change', e=> setText(e.target.value));
+    const map = AA_LEVELS[key];
+    const select = card.querySelector('select[data-levelpicker]');
+    const hint = card.querySelector('[data-leveltext]');
+    if (!select || !map) return;
+
+    // Build options with "N – text"
+    const levels = Object.keys(map).map(Number).sort((a,b)=>a-b);
+    const opts = ['<option value="">— Choose —</option>']
+      .concat(levels.map(n=>`<option value="${n}">${n} – ${map[n]}</option>`));
+    select.innerHTML = opts.join('');
+
+    // Update hint on change
+    select.addEventListener('change', e=>{
+      const n = e.target.value;
+      hint.textContent = map[n] ? `${n} – ${map[n]}` : '';
+    });
   });
 })();
 </script>
+
 </body>
 </html>
