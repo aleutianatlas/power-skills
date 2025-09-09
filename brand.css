@@ -120,3 +120,20 @@ textarea{min-height:120px}
 
 /* small footer */
 .aa-foot{ text-align:center; color:var(--aa-muted); font-size:12px; margin:18px 0 0 }
+
+/* ---------- PILL SCALE (0–10) ---------- */
+.pillscale{display:grid; grid-template-columns:repeat(11,minmax(32px,1fr)); gap:8px}
+.pill{position:relative}
+.pill input{position:absolute; inset:0; opacity:0}
+.pill label{
+  display:grid; place-items:center; padding:10px 0; border-radius:10px;
+  border:1px solid var(--aa-border); background:#fff; cursor:pointer; user-select:none;
+  font-weight:700; font-size:13px; color:var(--aa-ink);
+}
+.pill input:checked + label{
+  outline:2px solid var(--aa-accent-2); outline-offset:-2px;
+  border-color:var(--aa-accent-2); background:#f2fbfa;
+}
+.pill input:focus-visible + label{ box-shadow:0 0 0 3px rgba(24,108,116,.25) }
+.pill label:hover{ background:#f7fbfb }
+
