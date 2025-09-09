@@ -158,4 +158,16 @@ textarea{min-height:120px}
 .level-num label:hover{background:#f0fafa}
 .level-desc{color:var(--aa-ink)}
 
+/* Solo hero layout (no right column card) */
+.aa-hero--solo .aa-hero-inner{
+  grid-template-columns: 1fr; 
+  padding-bottom: 72px; /* slight lift above cards */
+}
+
+/* Instruction card variant */
+.info-card{
+  margin-top: -44px;       /* pull it up toward the hero edge */
+  margin-bottom: 16px;
+}
+
 
