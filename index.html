@@ -3,32 +3,30 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Connection — Aleutian Atlas Power Skills</title>
+  <title>Power Skills — Aleutian Atlas</title>
   <link rel="stylesheet" href="brand.css">
   <style>
-    /* Compact level rows */
-.levels{display:grid; gap:4px; margin:6px 0}
-.level-row{
-  display:grid; grid-template-columns: 36px 1fr; gap:8px;
-  align-items:center; font-size:13.5px; line-height:1.3;
-}
-.level-num input{display:none}
-.level-num label{
-  display:flex; align-items:center; justify-content:center;
-  width:32px; height:32px;
-  border:1.5px solid var(--aa-border);
-  border-radius:50%; cursor:pointer; font-weight:700;
-  background:#fff; color:var(--aa-ink);
-  transition:all .2s ease;
-}
-.level-num input:checked + label{
-  background:var(--aa-accent-2); color:#fff; border-color:var(--aa-accent-2);
-}
-.level-num label:hover{background:#EFBACD}
-.level-desc{color:var(--aa-ink)
-
+    /* --- Landing tiles --- */
+    .areas-grid{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(220px, 1fr));
+      gap:14px;
+      margin-top:14px;
     }
-    .skill-card .label{margin-top:2px}
+    @media (max-width: 720px){
+      .areas-grid{ grid-template-columns: 1fr; }
+    }
+    .area-card{
+      display:flex; flex-direction:column; gap:6px;
+      background:#fff; border:1px solid var(--aa-border); border-radius:14px;
+      padding:16px; text-decoration:none; color:var(--aa-ink);
+      transition: box-shadow .15s ease, transform .06s ease, border-color .15s ease;
+    }
+    .area-card:hover{ box-shadow: var(--aa-shadow); border-color:#dfe9e9; }
+    .area-card:active{ transform: translateY(1px); }
+    .area-title{ font-weight:800; font-size:18px; margin:0; }
+    .area-desc{ color:var(--aa-muted); margin:0; font-size:14px; }
+    .area-meta{ font-size:12px; color:var(--aa-muted); margin-top:2px; }
   </style>
 </head>
 <body>
@@ -53,37 +51,49 @@
   </div>
 </header>
 
-</head>
-<body>
 <div class="wrapper">
   <div class="card">
-    <h1>Power Skills Inventory</h1>
-    <p class="lead">Choose a category below to begin your self-assessment.</p>
+    <h1 class="skill-title" style="font-size:22px; margin:0 0 6px;">Power Skills Inventory</h1>
+    <p class="skill-desc" style="margin:0 0 12px;">Choose a section below to begin. Each section groups related skills so you can complete the inventory in fewer forms.</p>
 
-    <div class="grid">
-      <a class="assessment" href="adaptability.html">Adaptability</a>
-      <a class="assessment" href="business-thinking.html">Business Thinking</a>
-      <a class="assessment" href="collaboration.html">Collaboration</a>
-      <a class="assessment" href="communication.html">Communication</a>
-      <a class="assessment" href="decision-making.html">Decision Making</a>
-      <a class="assessment" href="dependability.html">Dependability</a>
-      <a class="assessment" href="expertise.html">Expertise</a>
-      <a class="assessment" href="influence.html">Influence</a>
-      <a class="assessment" href="initiative.html">Initiative</a>
-      <a class="assessment" href="innovation.html">Innovation</a>
-      <a class="assessment" href="leadership.html">Leadership</a>
-      <a class="assessment" href="planning.html">Planning</a>
-      <a class="assessment" href="relationship-building.html">Relationship Building</a>
-      <a class="assessment" href="resilience.html">Resilience</a>
-      <a class="assessment" href="results-orientation.html">Results Orientation</a>
-      <a class="assessment" href="strategy.html">Strategy</a>
-      <a class="assessment" href="values.html">Values</a>
-      <a class="assessment" href="writing.html">Writing</a>
-      <a class="assessment" href="critical-thinking.html">Critical Thinking</a>
-      <a class="assessment" href="learning.html">Learning</a>
-      <a class="assessment" href="pathfinder.html">Pathfinder Survey</a>
+    <div class="areas-grid">
+      <!-- 1. Adaptive Mindset -->
+      <a class="area-card" href="adaptive-mindset.html">
+        <h2 class="area-title">Adaptive Mindset</h2>
+        <p class="area-desc">Resilience, learning, critical thinking, innovation—how you respond, learn, and evolve.</p>
+        <div class="area-meta">~10–15 min • self-assessment</div>
+      </a>
+
+      <!-- 2. Collaboration & Influence -->
+      <a class="area-card" href="collaboration-influence.html">
+        <h2 class="area-title">Collaboration &amp; Influence</h2>
+        <p class="area-desc">Connection, communication, relationship building, listening, inclusion, writing.</p>
+        <div class="area-meta">~15–20 min • self-assessment</div>
+      </a>
+
+      <!-- 3. Execution & Dependability -->
+      <a class="area-card" href="execution-dependability.html">
+        <h2 class="area-title">Execution &amp; Dependability</h2>
+        <p class="area-desc">Planning, decision making, results orientation, initiative, dependability, values.</p>
+        <div class="area-meta">~15–20 min • self-assessment</div>
+      </a>
+
+      <!-- 4. Leadership & Strategy -->
+      <a class="area-card" href="leadership-strategy.html">
+        <h2 class="area-title">Leadership &amp; Strategy</h2>
+        <p class="area-desc">Strategic thinking, business thinking, expertise, leadership presence, influence at scale.</p>
+        <div class="area-meta">~15–20 min • self-assessment</div>
+      </a>
+
+      <!-- Pathfinder Survey -->
+      <a class="area-card" href="pathfinder.html" style="grid-column:1 / -1">
+        <h2 class="area-title">Pathfinder Survey</h2>
+        <p class="area-desc">Share your goals, context, and constraints to shape your personalized report and coaching plan.</p>
+        <div class="area-meta">~8–10 min • reflection</div>
+      </a>
     </div>
   </div>
 </div>
+
 </body>
 </html>
