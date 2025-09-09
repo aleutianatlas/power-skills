@@ -215,7 +215,7 @@
 
 <!-- inline: level text map + live preview -->
 <script>
-/* 1) Level text map (same as before) */
+/* Level text map (your wording). */
 const AA_LEVELS = {
   appreciation: {
     0:"I don’t often think to express appreciation at work.",
@@ -296,43 +296,36 @@ const AA_LEVELS = {
     10:"I’m recognized for treating people with dignity and setting the standard for respectful communication."
   },
   inclusion: {
-    0:"I haven’t really thought about inclusion in my work yet…",
-    1:"I know inclusion matters, but I’m not sure what it looks like in practice…",
+    0:"I haven’t really thought about inclusion in my work yet. I often make decisions on my own because that’s what my role requires.",
+    1:"I know inclusion matters, but I’m not sure what it looks like in practice. Sometimes a few people dominate meetings.",
     2:"I notice when others make space for more voices and see how valuable that is.",
-    3:"I’ve started to ask for input in simple situations…",
-    4:"I’m making more intentional efforts to include others…",
+    3:"I’ve started to ask for input in simple situations (e.g., “Any other thoughts?”).",
+    4:"I’m making more intentional efforts to include others (e.g., follow-up for perspectives).",
     5:"I regularly ask for feedback before making everyday decisions.",
-    6:"I make sure a variety of voices are heard, even in bigger discussions.",
+    6:"I ensure a variety of voices are heard in bigger discussions; I invite quieter perspectives.",
     7:"I anticipate who needs to be part of a decision and bring them in early.",
-    8:"I’ve built habits/structures so inclusion happens consistently.",
-    9:"I help shape the culture so inclusion becomes the norm.",
-    10:"I’m recognized for shaping inclusion at the organization level."
+    8:"I’ve built habits/structures so inclusion happens consistently (rotating leads, async surveys).",
+    9:"I help shape culture so inclusion is the norm; we consider multiple perspectives before big decisions.",
+    10:"I’m recognized for shaping inclusion at the organization level; multiple perspectives are standard before decisions."
   }
 };
 
-/* 2) Build options + live description */
+/* Bind each pill group so the description reflects the chosen value. */
 (function(){
-  document.querySelectorAll('.skill-card').forEach(card=>{
-    const key = card.getAttribute('data-skill');
+  document.querySelectorAll('[data-levelpicker]').forEach(group=>{
+    const key = group.getAttribute('data-skill');
     const map = AA_LEVELS[key];
-    const select = card.querySelector('select[data-levelpicker]');
-    const hint = card.querySelector('[data-leveltext]');
-    if (!select || !map) return;
+    const hint = group.closest('.skill-card').querySelector('[data-leveltext]');
+    if (!map || !hint) return;
 
-    // Build options with "N – text"
-    const levels = Object.keys(map).map(Number).sort((a,b)=>a-b);
-    const opts = ['<option value="">— Choose —</option>']
-      .concat(levels.map(n=>`<option value="${n}">${n} – ${map[n]}</option>`));
-    select.innerHTML = opts.join('');
-
-    // Update hint on change
-    select.addEventListener('change', e=>{
-      const n = e.target.value;
-      hint.textContent = map[n] ? `${n} – ${map[n]}` : '';
+    group.addEventListener('change', e=>{
+      const val = (group.querySelector('input:checked') || {}).value;
+      hint.textContent = (val !== undefined && map[val] !== undefined) ? `${val} – ${map[val]}` : '';
     });
   });
 })();
 </script>
+
 
 </body>
 </html>
