@@ -22,7 +22,7 @@
     <div class="aa-hero-card">
       <strong>Instructions</strong>
       <p class="aa-sub" style="color:#355b60;margin:6px 0 0;">
-        Choose the level (0–10) that best matches your current behavior. The description below each picker updates to show what that level looks like.
+        Select the level (0–10) that best matches your current behavior. The description below each scale updates to show what that level looks like.
       </p>
     </div>
   </div>
@@ -53,6 +53,9 @@
         </div>
       </div>
 
+      <!-- ========== SKILLS ========== -->
+
+      <!-- Skill helper: pill group template is repeated for each skill (0–10 radios) -->
       <!-- Appreciation -->
       <div class="skill-card" data-skill="appreciation">
         <div class="skill-head">
@@ -63,27 +66,19 @@
         </div>
         <div class="skill-body">
           <span class="label">Select your level (0–10)</span>
-<!-- 0–10 radio pills -->
-  <div class="pillscale" role="group" aria-label="Appreciation level"
-       data-skill="appreciation" data-levelpicker>
-    <!-- name must be unique per skill -->
-    <div class="pill">
-      <input id="appreciation-0" type="radio" name="connection__appreciation" value="0" required>
-      <label for="appreciation-0">0</label>
-    </div>
-    <div class="pill"><input id="appreciation-1" type="radio" name="connection__appreciation" value="1"><label for="appreciation-1">1</label></div>
-    <div class="pill"><input id="appreciation-2" type="radio" name="connection__appreciation" value="2"><label for="appreciation-2">2</label></div>
-    <div class="pill"><input id="appreciation-3" type="radio" name="connection__appreciation" value="3"><label for="appreciation-3">3</label></div>
-    <div class="pill"><input id="appreciation-4" type="radio" name="connection__appreciation" value="4"><label for="appreciation-4">4</label></div>
-    <div class="pill"><input id="appreciation-5" type="radio" name="connection__appreciation" value="5"><label for="appreciation-5">5</label></div>
-    <div class="pill"><input id="appreciation-6" type="radio" name="connection__appreciation" value="6"><label for="appreciation-6">6</label></div>
-    <div class="pill"><input id="appreciation-7" type="radio" name="connection__appreciation" value="7"><label for="appreciation-7">7</label></div>
-    <div class="pill"><input id="appreciation-8" type="radio" name="connection__appreciation" value="8"><label for="appreciation-8">8</label></div>
-    <div class="pill"><input id="appreciation-9" type="radio" name="connection__appreciation" value="9"><label for="appreciation-9">9</label></div>
-    <div class="pill"><input id="appreciation-10" type="radio" name="connection__appreciation" value="10"><label for="appreciation-10">10</label></div>
-  </div>
-
-  <!-- live description for selected level -->
+          <div class="pillscale" role="group" aria-label="Appreciation level" data-levelpicker>
+            <div class="pill"><input id="appreciation-0"  type="radio" name="connection__appreciation" value="0" required><label for="appreciation-0">0</label></div>
+            <div class="pill"><input id="appreciation-1"  type="radio" name="connection__appreciation" value="1"><label for="appreciation-1">1</label></div>
+            <div class="pill"><input id="appreciation-2"  type="radio" name="connection__appreciation" value="2"><label for="appreciation-2">2</label></div>
+            <div class="pill"><input id="appreciation-3"  type="radio" name="connection__appreciation" value="3"><label for="appreciation-3">3</label></div>
+            <div class="pill"><input id="appreciation-4"  type="radio" name="connection__appreciation" value="4"><label for="appreciation-4">4</label></div>
+            <div class="pill"><input id="appreciation-5"  type="radio" name="connection__appreciation" value="5"><label for="appreciation-5">5</label></div>
+            <div class="pill"><input id="appreciation-6"  type="radio" name="connection__appreciation" value="6"><label for="appreciation-6">6</label></div>
+            <div class="pill"><input id="appreciation-7"  type="radio" name="connection__appreciation" value="7"><label for="appreciation-7">7</label></div>
+            <div class="pill"><input id="appreciation-8"  type="radio" name="connection__appreciation" value="8"><label for="appreciation-8">8</label></div>
+            <div class="pill"><input id="appreciation-9"  type="radio" name="connection__appreciation" value="9"><label for="appreciation-9">9</label></div>
+            <div class="pill"><input id="appreciation-10" type="radio" name="connection__appreciation" value="10"><label for="appreciation-10">10</label></div>
+          </div>
           <div class="hint" data-leveltext></div>
         </div>
       </div>
@@ -97,12 +92,20 @@
           </div>
         </div>
         <div class="skill-body">
-          <label class="label">Select your level (0–10)</label>
-          <select name="connection__compassion" required data-levelpicker>
-            <option value="" selected>— Choose —</option>
-            <option>0</option><option>1</option><option>2</option><option>3</option><option>4</option>
-            <option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option>
-          </select>
+          <span class="label">Select your level (0–10)</span>
+          <div class="pillscale" role="group" aria-label="Compassion level" data-levelpicker>
+            <div class="pill"><input id="compassion-0"  type="radio" name="connection__compassion" value="0" required><label for="compassion-0">0</label></div>
+            <div class="pill"><input id="compassion-1"  type="radio" name="connection__compassion" value="1"><label for="compassion-1">1</label></div>
+            <div class="pill"><input id="compassion-2"  type="radio" name="connection__compassion" value="2"><label for="compassion-2">2</label></div>
+            <div class="pill"><input id="compassion-3"  type="radio" name="connection__compassion" value="3"><label for="compassion-3">3</label></div>
+            <div class="pill"><input id="compassion-4"  type="radio" name="connection__compassion" value="4"><label for="compassion-4">4</label></div>
+            <div class="pill"><input id="compassion-5"  type="radio" name="connection__compassion" value="5"><label for="compassion-5">5</label></div>
+            <div class="pill"><input id="compassion-6"  type="radio" name="connection__compassion" value="6"><label for="compassion-6">6</label></div>
+            <div class="pill"><input id="compassion-7"  type="radio" name="connection__compassion" value="7"><label for="compassion-7">7</label></div>
+            <div class="pill"><input id="compassion-8"  type="radio" name="connection__compassion" value="8"><label for="compassion-8">8</label></div>
+            <div class="pill"><input id="compassion-9"  type="radio" name="connection__compassion" value="9"><label for="compassion-9">9</label></div>
+            <div class="pill"><input id="compassion-10" type="radio" name="connection__compassion" value="10"><label for="compassion-10">10</label></div>
+          </div>
           <div class="hint" data-leveltext></div>
         </div>
       </div>
@@ -116,12 +119,20 @@
           </div>
         </div>
         <div class="skill-body">
-          <label class="label">Select your level (0–10)</label>
-          <select name="connection__empathy" required data-levelpicker>
-            <option value="" selected>— Choose —</option>
-            <option>0</option><option>1</option><option>2</option><option>3</option><option>4</option>
-            <option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option>
-          </select>
+          <span class="label">Select your level (0–10)</span>
+          <div class="pillscale" role="group" aria-label="Empathy level" data-levelpicker>
+            <div class="pill"><input id="empathy-0"  type="radio" name="connection__empathy" value="0" required><label for="empathy-0">0</label></div>
+            <div class="pill"><input id="empathy-1"  type="radio" name="connection__empathy" value="1"><label for="empathy-1">1</label></div>
+            <div class="pill"><input id="empathy-2"  type="radio" name="connection__empathy" value="2"><label for="empathy-2">2</label></div>
+            <div class="pill"><input id="empathy-3"  type="radio" name="connection__empathy" value="3"><label for="empathy-3">3</label></div>
+            <div class="pill"><input id="empathy-4"  type="radio" name="connection__empathy" value="4"><label for="empathy-4">4</label></div>
+            <div class="pill"><input id="empathy-5"  type="radio" name="connection__empathy" value="5"><label for="empathy-5">5</label></div>
+            <div class="pill"><input id="empathy-6"  type="radio" name="connection__empathy" value="6"><label for="empathy-6">6</label></div>
+            <div class="pill"><input id="empathy-7"  type="radio" name="connection__empathy" value="7"><label for="empathy-7">7</label></div>
+            <div class="pill"><input id="empathy-8"  type="radio" name="connection__empathy" value="8"><label for="empathy-8">8</label></div>
+            <div class="pill"><input id="empathy-9"  type="radio" name="connection__empathy" value="9"><label for="empathy-9">9</label></div>
+            <div class="pill"><input id="empathy-10" type="radio" name="connection__empathy" value="10"><label for="empathy-10">10</label></div>
+          </div>
           <div class="hint" data-leveltext></div>
         </div>
       </div>
@@ -135,197 +146,11 @@
           </div>
         </div>
         <div class="skill-body">
-          <label class="label">Select your level (0–10)</label>
-          <select name="connection__listening" required data-levelpicker>
-            <option value="" selected>— Choose —</option>
-            <option>0</option><option>1</option><option>2</option><option>3</option><option>4</option>
-            <option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option>
-          </select>
-          <div class="hint" data-leveltext></div>
-        </div>
-      </div>
-
-      <!-- Openness -->
-      <div class="skill-card" data-skill="openness">
-        <div class="skill-head">
-          <div>
-            <h3 class="skill-title">Openness</h3>
-            <p class="skill-desc">Welcomes a wide range of people and perspectives. Respects differences and avoids jumping to conclusions or judging.</p>
-          </div>
-        </div>
-        <div class="skill-body">
-          <label class="label">Select your level (0–10)</label>
-          <select name="connection__openness" required data-levelpicker>
-            <option value="" selected>— Choose —</option>
-            <option>0</option><option>1</option><option>2</option><option>3</option><option>4</option>
-            <option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option>
-          </select>
-          <div class="hint" data-leveltext></div>
-        </div>
-      </div>
-
-      <!-- Respectfulness -->
-      <div class="skill-card" data-skill="respectfulness">
-        <div class="skill-head">
-          <div>
-            <h3 class="skill-title">Respectfulness</h3>
-            <p class="skill-desc">Stays calm and kind, even under pressure. Treats people with basic decency and keeps communication professional.</p>
-          </div>
-        </div>
-        <div class="skill-body">
-          <label class="label">Select your level (0–10)</label>
-          <select name="connection__respectfulness" required data-levelpicker>
-            <option value="" selected>— Choose —</option>
-            <option>0</option><option>1</option><option>2</option><option>3</option><option>4</option>
-            <option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option>
-          </select>
-          <div class="hint" data-leveltext></div>
-        </div>
-      </div>
-
-      <!-- Inclusion -->
-      <div class="skill-card" data-skill="inclusion">
-        <div class="skill-head">
-          <div>
-            <h3 class="skill-title">Inclusion</h3>
-            <p class="skill-desc">Brings others into the process. Seeks out opinions, values feedback, and makes sure everyone feels heard before decisions are made.</p>
-          </div>
-        </div>
-        <div class="skill-body">
-          <label class="label">Select your level (0–10)</label>
-       <select name="connection__appreciation" required data-levelpicker>
-         <option value="" selected>— Choose —</option>
-       </select>
-          <div class="hint" data-leveltext></div>
-        </div>
-      </div>
-
-      <div class="hr"></div>
-      <div style="display:flex; gap:10px; flex-wrap:wrap">
-        <button class="btn primary" type="submit" name="_action" value="report">Submit & Generate Report</button>
-        <button class="btn ghost" type="submit" name="_action" value="menu">Return to Skills Menu</button>
-      </div>
-      <p class="aa-foot">© Aleutian Atlas</p>
-    </form>
-  </div>
-</div>
-
-<!-- shared behaviors -->
-<script src="app.js"></script>
-
-<!-- inline: level text map + live preview -->
-<script>
-/* Level text map (your wording). */
-const AA_LEVELS = {
-  appreciation: {
-    0:"I don’t often think to express appreciation at work.",
-    1:"I say thank you occasionally but not consistently.",
-    2:"I recognize contributions when prompted, like during formal reviews.",
-    3:"I make an effort to thank people in small ways, though sometimes I forget.",
-    4:"I notice good work and share appreciation when it stands out.",
-    5:"I regularly say thank you and make sure people feel noticed.",
-    6:"I personalize my appreciation, recognizing people in ways meaningful to them.",
-    7:"I highlight contributions publicly so people get visible credit.",
-    8:"I create team habits of appreciation, like shout-outs in meetings.",
-    9:"I build a culture where recognition flows naturally among teammates.",
-    10:"I’m known for making people feel valued and inspiring others to spread appreciation."
-  },
-  compassion: {
-    0:"I don’t usually think about how people are feeling at work.",
-    1:"I notice when someone is clearly upset but don’t know what to do.",
-    2:"I feel concerned for others but may hesitate to reach out.",
-    3:"I’ve started checking in, even if it’s just saying, “You seem quiet today.”",
-    4:"I offer support when I sense someone needs it, like giving them space or encouragement.",
-    5:"I regularly show care by asking how people are doing and offering help.",
-    6:"I balance care with accountability, showing kindness while keeping work moving.",
-    7:"I anticipate when people might need extra support and adjust my approach.",
-    8:"I encourage compassion across the team, modeling it in daily interactions.",
-    9:"I build a culture where people support one another in both personal and professional challenges.",
-    10:"I’m known as someone who leads with compassion and helps others bring kindness into their work."
-  },
-  empathy: {
-    0:"I haven’t thought much about how others are feeling during interactions.",
-    1:"I notice big emotional signals (like someone crying) but not subtle ones.",
-    2:"I can see when others are stressed or upset, though I’m not always sure what to do.",
-    3:"I’ve started to pay more attention to tone and facial expressions, but I don’t always respond in the moment.",
-    4:"I check in when someone seems off, even if it’s just, “Are you okay?”",
-    5:"I regularly tune into tone and body language and adjust how I respond.",
-    6:"I connect with others by noticing subtle cues, like when someone goes quiet in a meeting, and I follow up afterward.",
-    7:"I can anticipate how someone might feel in a situation and adapt before issues arise.",
-    8:"I help others build empathy, modeling ways to read the room and connect with people’s experiences.",
-    9:"I create team environments where empathy is valued and practiced openly.",
-    10:"I’m known for my empathy; people seek me out because they feel understood and supported."
-  },
-  listening: {
-    0:"I haven’t paid much attention to my listening habits.",
-    1:"I often multitask or think ahead while someone is talking.",
-    2:"I notice when I interrupt but find it hard to stop myself.",
-    3:"I’ve started practicing listening without cutting in, though I sometimes drift off.",
-    4:"I’m able to focus during important conversations, even if I still miss details.",
-    5:"I regularly listen without interrupting and reflect before responding.",
-    6:"I show I’m listening by paraphrasing or asking clarifying questions.",
-    7:"I adapt my listening style based on the speaker, making them feel heard.",
-    8:"I help others improve their listening skills by modeling attentive presence.",
-    9:"I create spaces where people feel safe to share because they know they’ll be heard.",
-    10:"I’m recognized for deep, active listening that strengthens trust and relationships."
-  },
-  openness: {
-    0:"I haven’t reflected much on how I respond to differences.",
-    1:"I notice differences but may feel uncertain about how to engage.",
-    2:"I try not to judge, though I may still default to familiar perspectives.",
-    3:"I’m beginning to ask questions instead of assuming I understand.",
-    4:"I show openness in familiar settings but hesitate in unfamiliar ones.",
-    5:"I regularly listen with curiosity to perspectives that differ from mine.",
-    6:"I adjust my approach to make others feel welcome and respected.",
-    7:"I encourage the team to explore diverse perspectives before making decisions.",
-    8:"I model openness by being transparent about my own assumptions and learning from others.",
-    9:"I foster a culture where differences are valued and embraced.",
-    10:"I’m recognized for creating environments where people feel free to bring their full selves."
-  },
-  respectfulness: {
-    0:"I haven’t thought much about how I come across under stress.",
-    1:"I sometimes react quickly without considering tone.",
-    2:"I recognize when I’ve been short but may not correct it right away.",
-    3:"I try to stay polite but can slip when frustrated.",
-    4:"I usually keep my communication professional, even in challenging moments.",
-    5:"I consistently show respect in everyday interactions.",
-    6:"I manage pressure without letting it affect how I treat others.",
-    7:"I set an example by staying respectful in high-stakes or tense situations.",
-    8:"I encourage respectful dialogue within the team, even during conflict.",
-    9:"I influence culture by reinforcing respectful norms across groups.",
-    10:"I’m recognized for treating people with dignity and setting the standard for respectful communication."
-  },
-  inclusion: {
-    0:"I haven’t really thought about inclusion in my work yet. I often make decisions on my own because that’s what my role requires.",
-    1:"I know inclusion matters, but I’m not sure what it looks like in practice. Sometimes a few people dominate meetings.",
-    2:"I notice when others make space for more voices and see how valuable that is.",
-    3:"I’ve started to ask for input in simple situations (e.g., “Any other thoughts?”).",
-    4:"I’m making more intentional efforts to include others (e.g., follow-up for perspectives).",
-    5:"I regularly ask for feedback before making everyday decisions.",
-    6:"I ensure a variety of voices are heard in bigger discussions; I invite quieter perspectives.",
-    7:"I anticipate who needs to be part of a decision and bring them in early.",
-    8:"I’ve built habits/structures so inclusion happens consistently (rotating leads, async surveys).",
-    9:"I help shape culture so inclusion is the norm; we consider multiple perspectives before big decisions.",
-    10:"I’m recognized for shaping inclusion at the organization level; multiple perspectives are standard before decisions."
-  }
-};
-
-/* Bind each pill group so the description reflects the chosen value. */
-(function(){
-  document.querySelectorAll('[data-levelpicker]').forEach(group=>{
-    const key = group.getAttribute('data-skill');
-    const map = AA_LEVELS[key];
-    const hint = group.closest('.skill-card').querySelector('[data-leveltext]');
-    if (!map || !hint) return;
-
-    group.addEventListener('change', e=>{
-      const val = (group.querySelector('input:checked') || {}).value;
-      hint.textContent = (val !== undefined && map[val] !== undefined) ? `${val} – ${map[val]}` : '';
-    });
-  });
-})();
-</script>
-
-
-</body>
-</html>
+          <span class="label">Select your level (0–10)</span>
+          <div class="pillscale" role="group" aria-label="Listening level" data-levelpicker>
+            <div class="pill"><input id="listening-0"  type="radio" name="connection__listening" value="0" required><label for="listening-0">0</label></div>
+            <div class="pill"><input id="listening-1"  type="radio" name="connection__listening" value="1"><label for="listening-1">1</label></div>
+            <div class="pill"><input id="listening-2"  type="radio" name="connection__listening" value="2"><label for="listening-2">2</label></div>
+            <div class="pill"><input id="listening-3"  type="radio" name="connection__listening" value="3"><label for="listening-3">3</label></div>
+            <div class="pill"><input id="listening-4"  type="radio" name="connection__listening" value="4"><label for="listening-4">4</label></div>
+            <div class="pill"><input id="listening-5"  type="radio" name="connection__listening" v
