@@ -20,6 +20,11 @@ body{
   -moz-osx-font-smoothing: grayscale;
 }
 
+h1, h2, h3, .skill-title, .aa-title {
+  font-family: Aptos, "Segoe UI, Helvetica Neue, Arial, sans-serif;
+  font-weight: 700;
+}
+
 /* ---------- HERO ---------- */
 .aa-hero{
   color:#fff;
