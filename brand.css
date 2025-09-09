@@ -137,3 +137,15 @@ textarea{min-height:120px}
 .pill input:focus-visible + label{ box-shadow:0 0 0 3px rgba(24,108,116,.25) }
 .pill label:hover{ background:#f7fbfb }
 
+/* Compact level rows */
+.levels{display:grid; gap:4px; margin:6px 0}
+.level-row{
+  display:grid; grid-template-columns: 36px 1fr; gap:8px;
+  align-items:center; padding:6px 8px; border:1px solid var(--aa-border);
+  border-radius:6px; background:#fff; font-size:13.5px; line-height:1.3;
+}
+.level-num{display:flex; align-items:center; justify-content:center; font-weight:600}
+.level-row input[type=radio]{margin:0; accent-color:var(--aa-accent-2)}
+.level-desc{color:var(--aa-ink)}
+.level-row:hover{background:#f5fafa}
+
