@@ -6,70 +6,40 @@
   <title>Power Skills — Aleutian Atlas</title>
   <link rel="stylesheet" href="brand.css">
   <style>
-    /* ---------- PAGE CONTAINER ---------- */
-    .wrapper {
-      max-width: 980px;
-      margin: -52px auto 56px;
-      padding: 0 20px;
+    /* --- Landing tiles --- */
+    .areas-grid{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(220px, 1fr));
+      gap:14px;
+      margin-top:14px;
     }
-    .card {
-      background: var(--aa-surface, #fff);
-      border: 1px solid var(--aa-border, #ddd);
-      border-radius: 16px;
-      padding: 24px;
-      box-shadow: var(--aa-shadow, 0 2px 6px rgba(0,0,0,0.08));
+    @media (max-width: 720px){
+      .areas-grid{ grid-template-columns: 1fr; }
     }
+    .area-card{
+      display:flex; flex-direction:column; gap:6px;
+      border-radius:14px;
+      padding:20px;
+      text-decoration:none;
+      color:#fff; /* white text on colored background */
+      transition: box-shadow .15s ease, transform .06s ease;
+    }
+    .area-card:hover{ box-shadow: var(--aa-shadow); transform: translateY(-2px); }
+    .area-title{ font-weight:800; font-size:18px; margin:0; }
+    .area-desc{ margin:0; font-size:14px; line-height:1.4; }
+    .area-meta{ font-size:12px; margin-top:4px; opacity:.9; }
 
-    /* ---------- AREA CARDS GRID ---------- */
-    .areas-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 18px;
-      margin-top: 20px;
-    }
-
-    .area-card {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      border-radius: 14px;
-      padding: 22px 18px;
-      text-decoration: none;
-      color: #fff;
-      font-family: "Aptos", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-      font-weight: 500;
-      transition: transform .1s ease, box-shadow .2s ease;
-    }
-    .area-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 14px rgba(0,0,0,0.15);
-    }
-    .area-title {
-      font-weight: 800;
-      font-size: 20px;
-      margin: 0;
-      letter-spacing: 0.5px;
-    }
-    .area-desc {
-      margin: 0;
-      font-size: 14px;
-      line-height: 1.4;
-    }
-    .area-meta {
-      font-size: 12px;
-      opacity: 0.9;
-    }
-
-    /* ---------- BRAND COLOR VARIANTS ---------- */
-    .adaptive { background: #64C5BF; }        /* Teal */
-    .collaboration { background: #D65383; }  /* Rose Pink */
-    .execution { background: #E97132; }      /* Orange */
-    .leadership { background: #61448A; }     /* Indigo */
-    .pathfinder { background: #DCAF00; }     /* Golden Yellow */
+    /* --- Color variants --- */
+    .adaptive   { background:#64C5BF; }  /* Teal */
+    .collab     { background:#D65383; }  /* Pink */
+    .execution  { background:#E97132; }  /* Orange */
+    .leadership { background:#61448A; }  /* Indigo */
+    .pathfinder { background:#DCAF00; }  /* Golden Yellow */
   </style>
 </head>
 <body>
 
+<!-- Brand Header -->
 <header class="aa-hero aa-hero--solo">
   <div class="aa-hero-inner">
     <div class="aa-brand">
@@ -88,17 +58,17 @@
 
 <div class="wrapper">
   <div class="card" style="background:transparent; border:none; box-shadow:none;">
-    <h1 style="font-size:24px; margin-bottom:8px;">Power Skills Inventory</h1>
-    <p style="margin:0 0 18px;">Choose a section below to begin. Each section groups related skills into one assessment.</p>
+    <h1 class="skill-title" style="font-size:22px; margin:0 0 6px;">Power Skills Inventory</h1>
+    <p class="skill-desc" style="margin:0 0 12px;">Choose a section below to begin. Each section groups related skills so you can complete the inventory in fewer forms.</p>
 
     <div class="areas-grid">
       <a class="area-card adaptive" href="adaptive-mindset.html">
         <h2 class="area-title">Adaptive Mindset</h2>
-        <p class="area-desc">Resilience, learning, critical thinking, and innovation—how you respond, learn, and evolve.</p>
+        <p class="area-desc">Resilience, learning, critical thinking, innovation—how you respond, learn, and evolve.</p>
         <div class="area-meta">~10–15 min • self-assessment</div>
       </a>
 
-      <a class="area-card collaboration" href="collaboration-influence.html">
+      <a class="area-card collab" href="collaboration-influence.html">
         <h2 class="area-title">Collaboration &amp; Influence</h2>
         <p class="area-desc">Connection, communication, relationship building, listening, inclusion, writing.</p>
         <div class="area-meta">~15–20 min • self-assessment</div>
