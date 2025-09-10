@@ -6,6 +6,21 @@
   <title>Power Skills — Aleutian Atlas</title>
   <link rel="stylesheet" href="brand.css">
   <style>
+    /* ---------- PAGE CONTAINER ---------- */
+    .wrapper {
+      max-width: 980px;
+      margin: -52px auto 56px;
+      padding: 0 20px;
+    }
+    .card {
+      background: var(--aa-surface, #fff);
+      border: 1px solid var(--aa-border, #ddd);
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: var(--aa-shadow, 0 2px 6px rgba(0,0,0,0.08));
+    }
+
+    /* ---------- AREA CARDS GRID ---------- */
     .areas-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -45,7 +60,7 @@
       opacity: 0.9;
     }
 
-    /* Brand color variants */
+    /* ---------- BRAND COLOR VARIANTS ---------- */
     .adaptive { background: #64C5BF; }        /* Teal */
     .collaboration { background: #D65383; }  /* Rose Pink */
     .execution { background: #E97132; }      /* Orange */
