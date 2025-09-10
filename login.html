@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Power Skills Access — Aleutian Atlas</title>
+  <link rel="stylesheet" href="brand.css">
+  <style>
+    /* Layout for the two main cards */
+    .access-grid{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:16px;
+    }
+    @media (max-width: 880px){
+      .access-grid{ grid-template-columns: 1fr; }
+    }
+
+    .info{ color: var(--aa-muted); font-size: 13px; margin-top: 6px; }
+
+    /* Form specifics */
+    .form-row{ display:grid; gap:10px; margin-top: 8px; }
+    .actions{ display:flex; gap:10px; flex-wrap:wrap; margin-top: 12px; }
+    .note{ font-size:12px; color:var(--aa-muted); margin-top:6px; }
+
+    /* Stripe card gets a soft background to feel distinct */
+    .purchase-card{ background: #fff7ea; border-color: #f2d9b3; }
+    .purchase-card h2{ margin-top: 0; }
+
+    /* Optional: make headings consistent inside cards */
+    .card h2{ font-size: 18px; margin: 0 0 6px; }
+    .card p{ margin: 0 0 10px; }
+  </style>
+</head>
+<body>
+
+<!-- Brand Header -->
+<header class="aa-hero aa-hero--solo">
+  <div class="aa-hero-inner">
+    <!-- Left brand row -->
+    <div class="aa-brand">
+      <img class="aa-logo" src="assets/logo.png" alt="Aleutian Atlas Logo">
+      <div class="aa-title">
+        <span class="aa-aleutian">ALEUTIAN</span>
+        <span class="aa-atlas">ATLAS</span>
+      </div>
+    </div>
+
+    <!-- Centered tagline + subline -->
+    <div class="aa-taglines">
+      <div class="aa-claim" style="font-size:2.5rem">Navigate your career with confidence</div>
+      <p class="aa-sub">Assess your power skills to gain clarity on strengths, growth areas, and your unique path forward.</p>
+    </div>
+  </div>
+</header>
+
+<div class="wrapper">
+  <div class="access-grid">
+    <!-- Access / Login Card -->
+    <div class="card">
+      <h2 class="skill-title">Access Your Power Skills Survey</h2>
+      <p class="skill-desc">If you’ve already purchased, enter your email and your payment confirmation number to continue.</p>
+
+      <form id="access-form" class="form-row" autocomplete="on">
+        <div>
+          <label class="label" for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="you@example.com" required>
+        </div>
+
+        <div>
+          <label class="label" for="confirmation">Payment confirmation #</label>
+          <input id="confirmation" name="confirmation" type="text" placeholder="e.g., ch_... or pi_..." required>
+          <div class="note">Tip: This is shown on your Stripe receipt/confirmation screen and email.</div>
+        </div>
+
+        <div class="actions">
+          <button class="btn primary" type="submit">Continue to Survey</button>
+          <a class="btn ghost" href="skills-start.html">Browse Sections</a>
+        </div>
+
+        <div class="info">You’ll be able to complete the assessment in four sections. We’ll verify purchase details before sending any reports.</div>
+      </form>
+    </div>
+
+    <!-- Purchase Card -->
+    <div class="card purchase-card">
+      <h2 class="skill-title">Haven’t purchased yet?</h2>
+      <p class="skill-desc">Buy access to the Power Skills Inventory now. You’ll get an email receipt with your confirmation number.</p>
+
+      <!-- Stripe Buy Button -->
+      <script async src="https://js.stripe.com/v3/buy-button.js"></script>
+      <stripe-buy-button
+        buy-button-id="buy_btn_1S5cGNLrDZVKPd7dO9he5WYJ"
+        publishable-key="pk_live_51RbnvCLrDZVKPd7dc27dbycyCTLJeYkjtlLiuXD7fppbEfkZq9ixqmtFUDfxlgDsR1RPttFzh820jpXkq2RAB9tj00I72o5US8">
+      </stripe-buy-button>
+
+      <div class="note">After purchase, return here and use your email + the confirmation number to access the survey.</div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Soft gate: store values and proceed to start page
+  (function(){
+    const form = document.getElementById('access-form');
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      const email = (document.getElementById('email').value || '').trim();
+      const confirmation = (document.getElementById('confirmation').value || '').trim();
+
+      if(!email || !confirmation){
+        alert('Please enter both your email and your payment confirmation number.');
+        return;
+      }
+
+      // Persist for later pages (optional use)
+      try {
+        localStorage.setItem('aa_email', email);
+        localStorage.setItem('aa_payment_confirmation', confirmation);
+        localStorage.setItem('aa_access_time', new Date().toISOString());
+      } catch(_) {}
+
+      // Redirect to your survey start page (change if needed)
+      window.location.href = 'skills-start.html';
+    });
+
+    // Prefill if values exist
+    try {
+      const savedEmail = localStorage.getItem('aa_email');
+      const savedConf  = localStorage.getItem('aa_payment_confirmation');
+      if(savedEmail) document.getElementById('email').value = savedEmail;
+      if(savedConf)  document.getElementById('confirmation').value = savedConf;
+    } catch(_) {}
+  })();
+</script>
+
+</body>
+</html>
