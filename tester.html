@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Power Skills — Aleutian Atlas</title>
+  <link rel="stylesheet" href="brand.css">
+  <style>
+    .areas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 18px;
+      margin-top: 20px;
+    }
+
+    .area-card {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      border-radius: 14px;
+      padding: 22px 18px;
+      text-decoration: none;
+      color: #fff;
+      font-family: "Aptos", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+      font-weight: 500;
+      transition: transform .1s ease, box-shadow .2s ease;
+    }
+    .area-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+    }
+    .area-title {
+      font-weight: 800;
+      font-size: 20px;
+      margin: 0;
+      letter-spacing: 0.5px;
+    }
+    .area-desc {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.4;
+    }
+    .area-meta {
+      font-size: 12px;
+      opacity: 0.9;
+    }
+
+    /* Brand color variants */
+    .adaptive { background: #64C5BF; }        /* Teal */
+    .collaboration { background: #D65383; }  /* Rose Pink */
+    .execution { background: #E97132; }      /* Orange */
+    .leadership { background: #61448A; }     /* Indigo */
+    .pathfinder { background: #DCAF00; }     /* Golden Yellow */
+  </style>
+</head>
+<body>
+
+<header class="aa-hero aa-hero--solo">
+  <div class="aa-hero-inner">
+    <div class="aa-brand">
+      <img class="aa-logo" src="assets/logo.png" alt="Aleutian Atlas Logo">
+      <div class="aa-title">
+        <span class="aa-aleutian">ALEUTIAN</span>
+        <span class="aa-atlas">ATLAS</span>
+      </div>
+    </div>
+    <div class="aa-taglines">
+      <div class="aa-claim" style="font-size:2.5rem">Navigate your career with confidence</div>
+      <p class="aa-sub">Assess your power skills to gain clarity on strengths, growth areas, and your unique path forward.</p>
+    </div>
+  </div>
+</header>
+
+<div class="wrapper">
+  <div class="card" style="background:transparent; border:none; box-shadow:none;">
+    <h1 style="font-size:24px; margin-bottom:8px;">Power Skills Inventory</h1>
+    <p style="margin:0 0 18px;">Choose a section below to begin. Each section groups related skills into one assessment.</p>
+
+    <div class="areas-grid">
+      <a class="area-card adaptive" href="adaptive-mindset.html">
+        <h2 class="area-title">Adaptive Mindset</h2>
+        <p class="area-desc">Resilience, learning, critical thinking, and innovation—how you respond, learn, and evolve.</p>
+        <div class="area-meta">~10–15 min • self-assessment</div>
+      </a>
+
+      <a class="area-card collaboration" href="collaboration-influence.html">
+        <h2 class="area-title">Collaboration &amp; Influence</h2>
+        <p class="area-desc">Connection, communication, relationship building, listening, inclusion, writing.</p>
+        <div class="area-meta">~15–20 min • self-assessment</div>
+      </a>
+
+      <a class="area-card execution" href="execution-dependability.html">
+        <h2 class="area-title">Execution &amp; Dependability</h2>
+        <p class="area-desc">Planning, decision making, results orientation, initiative, dependability, values.</p>
+        <div class="area-meta">~15–20 min • self-assessment</div>
+      </a>
+
+      <a class="area-card leadership" href="leadership-strategy.html">
+        <h2 class="area-title">Leadership &amp; Strategy</h2>
+        <p class="area-desc">Strategic thinking, business thinking, expertise, leadership presence, influence at scale.</p>
+        <div class="area-meta">~15–20 min • self-assessment</div>
+      </a>
+
+      <a class="area-card pathfinder" href="pathfinder.html" style="grid-column:1 / -1">
+        <h2 class="area-title">Pathfinder Survey</h2>
+        <p class="area-desc">Share your goals, context, and constraints to shape your personalized report and coaching plan.</p>
+        <div class="area-meta">~8–10 min • reflection</div>
+      </a>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
