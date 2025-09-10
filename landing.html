@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aleutian Atlas — Power Skills Inventory</title>
+  <link rel="stylesheet" href="brand.css">
+  <style>
+    /* Layout helpers specific to this page */
+    .hero-actions{ display:flex; gap:12px; flex-wrap:wrap; margin-top:14px; }
+    .btn.alt{ background:#fff; color:var(--aa-accent); border:1px solid var(--aa-accent); }
+    .muted{ color:var(--aa-muted); }
+
+    .split{
+      display:grid; grid-template-columns: 1.1fr .9fr; gap:16px;
+    }
+    @media (max-width: 920px){ .split{ grid-template-columns: 1fr; } }
+
+    .feature-grid{
+      display:grid; grid-template-columns: repeat(3, minmax(220px,1fr)); gap:12px;
+      margin-top: 10px;
+    }
+    @media (max-width: 920px){ .feature-grid{ grid-template-columns: 1fr; } }
+
+    .feature{
+      background:#fff; border:1px solid var(--aa-border);
+      border-radius:14px; padding:16px;
+    }
+    .feature h3{ margin:0 0 6px; font-size:16px; font-weight:800; }
+    .feature p{ margin:0; font-size:14px; color:var(--aa-muted); }
+
+    .step-list{
+      display:grid; gap:8px; margin:8px 0 0;
+    }
+    .step{
+      background:#fff; border:1px solid var(--aa-border);
+      border-radius:14px; padding:12px 14px; font-size:14px;
+    }
+
+    .pricing{
+      background:#fff7ea; border:1px solid #f2d9b3;
+      border-radius:16px; padding:20px;
+    }
+    .pricing h2{ margin:0 0 6px; font-size:18px; }
+    .pricing p{ margin:0 0 10px; }
+
+    .faq h3{ font-size:16px; margin:10px 0 4px; font-weight:800; }
+    .faq p{ margin:0 0 8px; color:var(--aa-muted); }
+
+    /* Make the hero copy centered while brand stays left per your pattern */
+    .aa-hero--solo .aa-taglines{ text-align:center; }
+    .aa-hero--solo .aa-taglines .aa-sub{ margin-top:6px; }
+  </style>
+  <!-- Stripe Buy Button loader -->
+  <script async src="https://js.stripe.com/v3/buy-button.js"></script>
+</head>
+<body>
+
+<!-- Brand Header -->
+<header class="aa-hero aa-hero--solo">
+  <div class="aa-hero-inner">
+    <!-- Brand (left) -->
+    <div class="aa-brand">
+      <img class="aa-logo" src="assets/logo.png" alt="Aleutian Atlas Logo">
+      <div class="aa-title">
+        <span class="aa-aleutian">ALEUTIAN</span>
+        <span class="aa-atlas">ATLAS</span>
+      </div>
+    </div>
+
+    <!-- Tagline + pitch (centered) -->
+    <div class="aa-taglines">
+      <div class="aa-claim" style="font-size:2.6rem">Navigate your career with confidence</div>
+      <p class="aa-sub">A streamlined skills inventory to surface strengths, pinpoint growth areas, and chart your next move.</p>
+
+      <div class="hero-actions">
+        <a class="btn primary" href="https://skills.aleutianatlas.com/login">Log in to your survey</a>
+        <a class="btn alt" href="#buy">Buy the Power Skills Inventory</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrapper">
+  <!-- What you’ll get / How it works -->
+  <div class="card">
+    <div class="split">
+      <section>
+        <h2 class="skill-title" style="font-size:18px; margin:0 0 6px;">What you’ll get</h2>
+        <div class="feature-grid">
+          <div class="feature">
+            <h3>Four concise sections</h3>
+            <p>Adaptive Mindset, Collaboration &amp; Influence, Execution &amp; Dependability, Leadership &amp; Strategy—complete in focused blocks.</p>
+          </div>
+          <div class="feature">
+            <h3>Clear 0–10 scales</h3>
+            <p>Behavior-based descriptors make it easy to select the level that best matches your current practice.</p>
+          </div>
+          <div class="feature">
+            <h3>Actionable report</h3>
+            <p>We synthesize your results and highlight targeted next steps. (Report delivered to purchasers.)</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="skill-title" style="font-size:18px; margin:0 0 6px;">How it works</h2>
+        <div class="step-list">
+          <div class="step"><strong>1.</strong> Purchase access (or log in if you’ve already purchased).</div>
+          <div class="step"><strong>2.</strong> Complete the four skill sections at your pace.</div>
+          <div class="step"><strong>3.</strong> Fill out the Pathfinder survey to share goals and context.</div>
+          <div class="step"><strong>4.</strong> Receive your personalized report via email.</div>
+        </div>
+        <p class="muted" style="margin-top:10px;">Prefer to browse first? You can preview the sections after logging in.</p>
+      </section>
+    </div>
+  </div>
+
+  <!-- Pricing / Buy -->
+  <div id="buy" class="card pricing" style="margin-top:16px;">
+    <h2>Buy the Power Skills Inventory</h2>
+    <p class="muted">Secure checkout via Stripe. You’ll receive an email receipt with your confirmation number to log in.</p>
+
+    <!-- Stripe Buy Button -->
+    <stripe-buy-button
+      buy-button-id="buy_btn_1S5cGNLrDZVKPd7dO9he5WYJ"
+      publishable-key="pk_live_51RbnvCLrDZVKPd7dc27dbycyCTLJeYkjtlLiuXD7fppbEfkZq9ixqmtFUDfxlgDsR1RPttFzh820jpXkq2RAB9tj00I72o5US8">
+    </stripe-buy-button>
+  </div>
+
+  <!-- FAQ -->
+  <div class="card faq" style="margin-top:16px;">
+    <h2 class="skill-title" style="font-size:18px; margin:0 0 6px;">FAQ</h2>
+
+    <h3>How long does it take?</h3>
+    <p>Most people complete all four sections plus the Pathfinder in about one hour in one sitting, or split across a couple of sessions.</p>
+
+    <h3>Do I need to finish in one sitting?</h3>
+    <p>No. You can complete sections independently. We recommend finishing the Pathfinder after you’ve done the four skill sections.</p>
+
+    <h3>When do I receive my report?</h3>
+    <p>Reports are prepared for purchasers after submission. You’ll get it via email using the address you logged in with.</p>
+
+    <h3>Where do I log in?</h3>
+    <p>Use your email and payment confirmation at <a href="https://skills.aleutianatlas.com/login">skills.aleutianatlas.com/login</a>.</p>
+  </div>
+</div>
+
+</body>
+</html>
