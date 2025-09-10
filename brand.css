@@ -72,13 +72,13 @@ h1, h2, h3, .skill-title, .aa-title{
 .aa-atlas{ font-weight:300; }
 
 /* --- TAGLINES: centered across page --- */
-.aa-claim{
-  text-align:center;
-  font-size:1.75rem;
-  font-weight:800;
-  margin:8px auto 2px;
-  max-width:900px;
+.aa-claim {
+  font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif; 
+  font-weight: 600;   /* lighter than bold */
+  font-size: 2.2rem;  /* keep it prominent */
+  line-height: 1.3;
 }
+
 /* Reset default: body copy is left-aligned */
 .aa-sub { text-align: left; }
 
