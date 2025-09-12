@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Connection — Aleutian Atlas Power Skills</title>
+  <link rel="stylesheet" href="brand.css">
+  <style>
+    /* Compact level rows */
+.levels{display:grid; gap:4px; margin:6px 0}
+.level-row{
+  display:grid; grid-template-columns: 36px 1fr; gap:8px;
+  align-items:center; font-size:13.5px; line-height:1.3;
+}
+.level-num input{display:none}
+.level-num label{
+  display:flex; align-items:center; justify-content:center;
+  width:32px; height:32px;
+  border:1.5px solid var(--aa-border);
+  border-radius:50%; cursor:pointer; font-weight:700;
+  background:#fff; color:var(--aa-ink);
+  transition:all .2s ease;
+}
+.level-num input:checked + label{
+  background:var(--aa-accent-2); color:#fff; border-color:var(--aa-accent-2);
+}
+.level-num label:hover{background:#EFBACD}
+.level-desc{color:var(--aa-ink)
+
+    }
+    .skill-card .label{margin-top:2px}
+  </style>
+</head>
+<body>
+
+<!-- Brand Header -->
+<header class="aa-hero aa-hero--solo">
+  <div class="aa-hero-inner">
+    <!-- Left brand row -->
+    <div class="aa-brand">
+      <img class="aa-logo" src="assets/logo.png" alt="Aleutian Atlas Logo">
+      <div class="aa-title">
+        <span class="aa-aleutian">ALEUTIAN</span>
+        <span class="aa-atlas">ATLAS</span>
+      </div>
+    </div>
+
+    <!-- Centered tagline + subline -->
+    <div class="aa-taglines">
+      <div class="aa-claim" style="font-size:2.5rem">Navigate your career with confidence</div>
+      <p class="aa-sub">Assess your power skills to gain clarity on strengths, growth areas, and your unique path forward.</p>
+    </div>
+  </div>
+</header>
+
+
+ 
+<div class="wrapper">
+  <div class="card info-card">
+      <p class="aa-sub" style="color:#0b2f33; margin:8px 0 12px;">
+      Welcome to the <strong>Collaboration &amp; Influence </strong> Assessment.
+      This survey focuses on your application of collaboration, communication, relationship building, influence, and writing skills.
+      To get the best results, please keep these guidelines in mind:
+    </p>
+
+    <ul style="margin:0 0 12px 18px; padding:0; color:#0b2f33;">
+      <li style="margin:0 0 8px;">
+        <strong>Complete in one sitting.</strong>
+        Plan for about one hour to reflect and respond thoughtfully so your progress isn’t lost.
+      </li>
+      <li style="margin:0 0 8px;">
+        <strong>Draw from your recent experience.</strong>
+        Think about how you’ve demonstrated these skills in your most recent roles and responsibilities.
+        Answer based on the behaviors you use most often—not what you could do if asked, but what you actually do day to day.
+      </li>
+      <li style="margin:0 0 8px;">
+        <strong>Answer honestly.</strong>
+        There are no right or wrong answers. The goal is to capture your current use of this skill so you can gain meaningful insights into strengths and growth areas.
+      </li>
+    </ul>
+
+    <p class="aa-sub" style="color:#355b60; margin:0;">When you’re ready, begin below.</p>
+  </div>
+</div>
+
+<div class="wrapper">  
+  <div class="card">
+
+    <!-- Replace with your Formspree endpoint -->
+    <form action="https://formspree.io/f/YOUR_CONNECTION_FORM_ID"
+          method="POST"
+          data-step="connection"
+          data-next="thanks.html">
+
+      <!-- Identity -->
+      <div class="skill-card" style="margin-bottom:18px">
+        <div class="skill-head">
+          <div>
+            <h3 class="skill-title">Your Info</h3>
+            <p class="skill-desc">We include your name & email with your responses for reporting.</p>
+          </div>
+        </div>
+        <div class="skill-body">
+          <label class="label" for="name">Full name</label>
+          <input id="name" name="name" type="text" required>
+          <label class="label" for="email">Email</label>
+          <input id="email" name="email" type="email" required>
+        </div>
+      </div>
+
+      <!-- ===== SKILLS (each shows 0–10 with descriptions) ===== -->
+
+      <!-- Appreciation -->
+<div class="skill-card">
+  <div class="skill-head">
+    <div>
+      <h3 class="skill-title">Appreciation</h3>
+      <p class="skill-desc">Calls out good work and says thank you. Makes sure people get credit and feel valued for what they do.</p>
+    </div>
+  </div>
+  <div class="skill-body">
+    <span class="label">Choose one level</span>
+    <div class="levels">
+      
+      <div class="level-row">
+        <span class="level-num"><input type="radio" id="app-0" name="connection__appreciation" value="0" required><label for="app-0">0</label></span>
+	<span class="level-desc">I don’t often think to express appreciation at work.</span>
+      </div>
+
+      <div class="level-row">
+	<span class="level-num"><input type="radio" id="app-1" name="connection__appreciation" value="1"><label for="app-1">1</label></span>
+        <span class="level-desc">I say thank you occasionally but not consistently.</span>
+      </div>
+
+      <div class="level-row">
+        <span class="level-num"><input type="radio" id="app-2" name="connection__appreciation" value="2"><label for="app-2">2</label></span>
+        <span class="level-desc">I recognize contributions when prompted, like during formal reviews.</span>
+      </div>
+
+      <div class="level-row">
+        <span class="level-num"><input type="radio" id="app-3" name="connection__appreciation" value="3" required><label for="app-3">3</label></span>
+        <span class="level-desc">I make an effort to thank people in small ways, though sometimes I forget.</span>
+      </div>
+
+      <div class="level-row">
+        <span class="level-num"><input type="radio" id="app-4" name="connection__appreciation" value="4"><label for="app-4">4</label></span>
+        <span class="level-desc">I notice good work and share appreciation when it stands out.</span>
+      </div>
+
+      <div class="level-row">
+        <span class="level-num"><input type="radio" id="app-5" name="connection__appreciation" value="5"><label for="app-5">5</label></span>
+        <span class="level-desc">I regularly say thank you and make sure people feel noticed.</span>
+      </div>
+
+      <div class="level-row">
+        <span class="level-num"><input type="radio" id="app-6" name="connection__appreciation" value="6"><label for="app-6">6</label></span>
+        <span class="level-desc">I personalize my appreciation, recognizing people in ways meaningful to them.</span>
+      </div>      
+
+      <div class="level-row">
+        <span class="level-num"><input type="radio" id="app-7" name="connection__appreciation" value="7"><label for="app-7">7</label></span>
+        <span class="level-desc">I highlight contributions publicly so people get visible credit.</span>
+      </div>   
+
+      <div class="level-row">
+        <span class="level-num"><input type="radio" id="app-8" name="connection__appreciation" value="8"><label for="app-8">8</label></span>
+        <span class="level-desc">I create team habits of appreciation, like shout-outs in meetings.</span>
+      </div> 
+
+      <div class="level-row">
+        <span class="level-num"><input type="radio" id="app-9" name="connection__appreciation" value="9"><label for="app-9">9</label></span>
+        <span class="level-desc">I build a culture where recognition flows naturally among teammates.</span>
+      </div> 
+
+      <div class="level-row">
+        <span class="level-num"><input type="radio" id="app-10" name="connection__appreciation" value="10"><label for="app-10">10</label></span>
+        <span class="level-desc">I’m known for making people feel valued and inspiring others to spread appreciation.</span>
+      </div> 
+       
+          </div>
+        </div>
+      </div>
+
+
+
+
+      <div class="hr"></div>
+      <div style="display:flex; gap:10px; flex-wrap:wrap">
+        <button class="btn primary" type="submit" name="_action" value="report">Submit</button>
+        <button class="btn ghost" type="submit" name="_action" value="menu">Return to Skills Menu</button>
+      </div>
+      <p class="aa-foot">© Aleutian Atlas</p>
+    </form>
+  </div>
+</div>
+
+<!-- shared behaviors -->
+<script src="app.js"></script>
+</body>
+</html>
