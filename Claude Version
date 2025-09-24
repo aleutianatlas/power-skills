@@ -1,0 +1,513 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Power Skills — Aleutian Atlas</title>
+  <style>
+    /* Brand CSS Recreation */
+    :root {
+      --aa-border: #e1e5e9;
+      --aa-ink: #1a1a1a;
+      --aa-muted: #6b7280;
+      --aa-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      --aa-primary: #2563eb;
+      --aa-primary-hover: #1d4ed8;
+      --aa-success: #059669;
+      --aa-bg: #fafbfc;
+    }
+    
+    * {
+      box-sizing: border-box;
+    }
+    
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--aa-bg);
+      color: var(--aa-ink);
+      line-height: 1.5;
+    }
+    
+    .aa-hero {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+    
+    .aa-hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .aa-brand {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+    
+    .aa-logo {
+      width: 48px;
+      height: 48px;
+      background: white;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      color: var(--aa-primary);
+    }
+    
+    .aa-title {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    
+    .aa-aleutian {
+      font-weight: 300;
+      font-size: 18px;
+      letter-spacing: 2px;
+    }
+    
+    .aa-atlas {
+      font-weight: 800;
+      font-size: 22px;
+      letter-spacing: 1px;
+    }
+    
+    .aa-taglines {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .aa-claim {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      line-height: 1.1;
+    }
+    
+    .aa-sub {
+      font-size: 18px;
+      opacity: 0.9;
+      margin: 0;
+      font-weight: 300;
+    }
+    
+    .wrapper {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+    
+    .card {
+      background: white;
+      border-radius: 16px;
+      padding: 32px;
+      margin-bottom: 40px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      border: 1px solid var(--aa-border);
+    }
+    
+    .skill-title {
+      font-size: 22px;
+      margin: 0 0 6px;
+      font-weight: 700;
+    }
+    
+    .skill-desc {
+      margin: 0 0 12px;
+      color: var(--aa-muted);
+    }
+
+    /* --- Landing tiles --- */
+    .areas-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(220px, 1fr));
+      gap: 14px;
+      margin-top: 14px;
+    }
+    
+    @media (max-width: 720px) {
+      .areas-grid { 
+        grid-template-columns: 1fr; 
+      }
+      .aa-claim {
+        font-size: 2rem;
+      }
+    }
+    
+    .area-card {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      background: #fff;
+      border: 1px solid var(--aa-border);
+      border-radius: 14px;
+      padding: 16px;
+      text-decoration: none;
+      color: var(--aa-ink);
+      transition: box-shadow .15s ease, transform .06s ease, border-color .15s ease;
+    }
+    
+    .area-card:hover {
+      box-shadow: var(--aa-shadow);
+      border-color: #dfe9e9;
+    }
+    
+    .area-card:active {
+      transform: translateY(1px);
+    }
+    
+    .area-title {
+      font-weight: 800;
+      font-size: 18px;
+      margin: 0;
+    }
+    
+    .area-desc {
+      color: var(--aa-muted);
+      margin: 0;
+      font-size: 14px;
+    }
+    
+    .area-meta {
+      font-size: 12px;
+      color: var(--aa-muted);
+      margin-top: 2px;
+    }
+    
+    /* Login and Purchase Sections */
+    .section-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin-top: 40px;
+    }
+    
+    @media (max-width: 768px) {
+      .section-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+    }
+    
+    .section-card {
+      background: white;
+      border-radius: 16px;
+      padding: 32px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      border: 1px solid var(--aa-border);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    
+    .section-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    }
+    
+    .section-title {
+      font-size: 24px;
+      font-weight: 700;
+      margin: 0 0 16px;
+      color: var(--aa-ink);
+    }
+    
+    .section-desc {
+      color: var(--aa-muted);
+      margin-bottom: 24px;
+      font-size: 16px;
+    }
+    
+    .form-group {
+      margin-bottom: 20px;
+    }
+    
+    .form-label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: var(--aa-ink);
+    }
+    
+    .form-input {
+      width: 100%;
+      padding: 12px 16px;
+      border: 2px solid var(--aa-border);
+      border-radius: 8px;
+      font-size: 16px;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      background: white;
+    }
+    
+    .form-input:focus {
+      outline: none;
+      border-color: var(--aa-primary);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    }
+    
+    .btn {
+      background: var(--aa-primary);
+      color: white;
+      border: none;
+      padding: 14px 24px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.2s ease, transform 0.1s ease;
+      width: 100%;
+      text-decoration: none;
+      display: inline-block;
+      text-align: center;
+    }
+    
+    .btn:hover {
+      background: var(--aa-primary-hover);
+    }
+    
+    .btn:active {
+      transform: translateY(1px);
+    }
+    
+    .btn-success {
+      background: var(--aa-success);
+    }
+    
+    .btn-success:hover {
+      background: #047857;
+    }
+    
+    .price-highlight {
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--aa-primary);
+      margin: 16px 0;
+    }
+    
+    .features-list {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0;
+    }
+    
+    .features-list li {
+      padding: 8px 0;
+      position: relative;
+      padding-left: 24px;
+    }
+    
+    .features-list li:before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--aa-success);
+      font-weight: bold;
+    }
+    
+    .divider {
+      text-align: center;
+      margin: 40px 0;
+      position: relative;
+      color: var(--aa-muted);
+    }
+    
+    .divider:before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: var(--aa-border);
+      z-index: 1;
+    }
+    
+    .divider span {
+      background: var(--aa-bg);
+      padding: 0 20px;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .login-status {
+      margin-top: 16px;
+      padding: 12px;
+      border-radius: 8px;
+      text-align: center;
+      font-weight: 500;
+    }
+    
+    .status-success {
+      background: #d1fae5;
+      color: #065f46;
+    }
+    
+    .status-error {
+      background: #fee2e2;
+      color: #991b1b;
+    }
+  </style>
+</head>
+<body>
+<!-- Brand Header -->
+<header class="aa-hero aa-hero--solo">
+  <div class="aa-hero-inner">
+    <!-- Left brand row -->
+    <div class="aa-brand">
+      <div class="aa-logo">AA</div>
+      <div class="aa-title">
+        <span class="aa-aleutian">ALEUTIAN</span>
+        <span class="aa-atlas">ATLAS</span>
+      </div>
+    </div>
+    <!-- Centered tagline + subline -->
+    <div class="aa-taglines">
+      <div class="aa-claim">Navigate your career with confidence</div>
+      <p class="aa-sub">Assess your power skills to gain clarity on strengths, growth areas, and your unique path forward.</p>
+    </div>
+  </div>
+</header>
+
+<div class="wrapper">
+  <div class="card">
+    <h1 class="skill-title">Power Skills Inventory</h1>
+    <p class="skill-desc">Choose a section below to begin. Each section groups related skills so you can complete the inventory in fewer forms.</p>
+    
+    <div class="areas-grid">
+      <a href="#" class="area-card">
+        <h3 class="area-title">Leadership & Influence</h3>
+        <p class="area-desc">Assess your ability to guide teams, make decisions, and inspire others toward shared goals.</p>
+        <div class="area-meta">8 core skills • 15 min</div>
+      </a>
+      
+      <a href="#" class="area-card">
+        <h3 class="area-title">Communication & Collaboration</h3>
+        <p class="area-desc">Evaluate your skills in verbal, written, and interpersonal communication across diverse settings.</p>
+        <div class="area-meta">6 core skills • 12 min</div>
+      </a>
+      
+      <a href="#" class="area-card">
+        <h3 class="area-title">Critical Thinking & Problem Solving</h3>
+        <p class="area-desc">Measure your analytical abilities, creativity, and systematic approach to complex challenges.</p>
+        <div class="area-meta">7 core skills • 18 min</div>
+      </a>
+      
+      <a href="#" class="area-card">
+        <h3 class="area-title">Adaptability & Resilience</h3>
+        <p class="area-desc">Discover your capacity for change management, stress handling, and continuous learning.</p>
+        <div class="area-meta">5 core skills • 10 min</div>
+      </a>
+    </div>
+  </div>
+  
+  <div class="divider">
+    <span>Access Your Assessment</span>
+  </div>
+  
+  <div class="section-grid">
+    <!-- Login Section -->
+    <div class="section-card">
+      <h2 class="section-title">Already Purchased?</h2>
+      <p class="section-desc">Enter your email and payment confirmation code to access your Power Skills Inventory.</p>
+      
+      <form id="loginForm">
+        <div class="form-group">
+          <label class="form-label" for="email">Email Address</label>
+          <input type="email" id="email" class="form-input" placeholder="your.email@example.com" required>
+        </div>
+        
+        <div class="form-group">
+          <label class="form-label" for="confirmationCode">Payment Confirmation Code</label>
+          <input type="text" id="confirmationCode" class="form-input" placeholder="ABC123DEF456" required>
+        </div>
+        
+        <button type="submit" class="btn">Access My Assessment</button>
+        
+        <div id="loginStatus" class="login-status" style="display: none;"></div>
+      </form>
+    </div>
+    
+    <!-- Purchase Section -->
+    <div class="section-card">
+      <h2 class="section-title">Get Your Assessment</h2>
+      <p class="section-desc">Unlock comprehensive insights into your power skills with our detailed assessment and personalized report.</p>
+      
+      <div class="price-highlight">$29</div>
+      
+      <ul class="features-list">
+        <li>Complete 26-skill assessment across 4 key areas</li>
+        <li>Personalized strengths and development report</li>
+        <li>Career pathway recommendations</li>
+        <li>Skill-building resource library</li>
+        <li>Progress tracking dashboard</li>
+        <li>30-day money-back guarantee</li>
+      </ul>
+      
+      <button onclick="handlePurchase()" class="btn btn-success">Purchase Now</button>
+      
+      <div style="margin-top: 16px; text-align: center; font-size: 14px; color: var(--aa-muted);">
+        Secure checkout • Instant access • No recurring charges
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// Login form handling
+document.getElementById('loginForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  
+  const email = document.getElementById('email').value;
+  const code = document.getElementById('confirmationCode').value;
+  const statusDiv = document.getElementById('loginStatus');
+  
+  // Show loading state
+  statusDiv.style.display = 'block';
+  statusDiv.className = 'login-status';
+  statusDiv.textContent = 'Verifying your credentials...';
+  
+  // Simulate API call
+  setTimeout(() => {
+    // Mock validation - in real implementation, this would call your backend
+    if (code.length >= 8 && email.includes('@')) {
+      statusDiv.className = 'login-status status-success';
+      statusDiv.textContent = 'Access granted! Redirecting to your assessment...';
+      
+      // Redirect after success message
+      setTimeout(() => {
+        // Replace with your actual assessment URL
+        window.location.href = '/assessment/dashboard';
+      }, 1500);
+    } else {
+      statusDiv.className = 'login-status status-error';
+      statusDiv.textContent = 'Invalid credentials. Please check your email and confirmation code.';
+    }
+  }, 1000);
+});
+
+// Purchase button handling
+function handlePurchase() {
+  // Replace with your actual payment processing
+  alert('Redirecting to secure checkout...\n\nIn a real implementation, this would connect to your payment processor (Stripe, PayPal, etc.)');
+  
+  // Example: Redirect to your payment page
+  // window.location.href = 'https://checkout.stripe.com/your-payment-link';
+}
+
+// Add some interactive hover effects
+document.querySelectorAll('.area-card').forEach(card => {
+  card.addEventListener('click', function(e) {
+    e.preventDefault();
+    alert('Assessment section: ' + this.querySelector('.area-title').textContent + '\n\nThis would navigate to the specific skill assessment.');
+  });
+});
+</script>
+
+</body>
+</html>
